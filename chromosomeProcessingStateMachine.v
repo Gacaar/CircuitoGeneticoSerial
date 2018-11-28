@@ -1,3 +1,4 @@
+parameter IDLE = 3'b000;
 module chromosomeProcessingStateMachine
 	( input wire iClock
 	, input wire [991:0] iConcatedChromDescription
@@ -28,8 +29,7 @@ module chromosomeProcessingStateMachine
 	, output wire oWriteToCorrectMem
 	);
 	
-	parameter IDLE = 3'b000;
-   include "parameters.sv"
+   `include "parameters.sv"
 	
 	reg [2:0] currentState = IDLE;
     

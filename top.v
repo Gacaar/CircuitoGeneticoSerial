@@ -53,7 +53,7 @@ wire [3:0][7:0] inputSequencesSample;
 wire [3:0][7:0] expectedOutputsSample;
 wire [3:0][7:0] validOutputsSample;
 wire writeSample;
-wire startComm;
+wire [31:0] sampleIndex;
 wire [NUM_SAMPLES:0][7:0] inputSequences;
 wire [NUM_SAMPLES:0][7:0] expectedOutputs;
 wire [NUM_SAMPLES:0][7:0] ValidOutputs;
@@ -214,12 +214,9 @@ testeio u0 (
 		  .input_sequence_0_export					({ inputSequencesSample[3], inputSequencesSample[2], inputSequencesSample[1], inputSequencesSample[0] }),
 		  .expected_output_0_export				({ expectedOutputsSample[3], expectedOutputsSample[2], expectedOutputsSample[1], expectedOutputsSample[0] }),
 		  .valid_output_0_export					({validOutputsSample[3], validOutputsSample[2], validOutputsSample[1], validOutputsSample[0] }),
-		  .preparingNextSample_export				(preparingNextSample)
+		  .preparingNextSample_export				(preparingNextSample),
 		  .writeSample_export						(writeSample),
-		  .startComm_export						(startComm),
-		  .inputSequences_export					(inputSequences),
-		  .expectedOutputs_export					(expectedOutputs),
-		  .validOutputs_export						(validOutputs),
+		  .sampleIndex_export						(sampleIndex),
 		  .nextSample_export							(nextSample),
 		  
 		  .sequences_to_process_export         (sequencesToProcess),
@@ -246,6 +243,7 @@ testeio u0 (
 		  
     );
 
+//maquina de estados serializacao
 ProcessamentoSerial fsm
 	( .iClock(CLOCK_50)
 	, .iCurrentSerialInput(inputSequencesSample)
@@ -253,7 +251,7 @@ ProcessamentoSerial fsm
 	, .iCurrentSerialValidOutput(validOutputsSample)
 	, .iPreparingNextSample(preparingNextSample)
 	, .iWriteSample(writeSample)
-	, .istartComm(startComm)
+	, .iSampleIndex(sampleIndex) 
 	, .oInputSequences(inputSequences)
 	, .oExpectedOutputs(expectedOutputs)
 	, .oValidOutputs(validOutputs)

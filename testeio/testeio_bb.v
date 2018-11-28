@@ -50,7 +50,6 @@ module testeio (
 	error_sum_6_export,
 	error_sum_7_export,
 	expected_output_0_export,
-	expectedoutputs_export,
 	hps_io_hps_io_emac1_inst_TX_CLK,
 	hps_io_hps_io_emac1_inst_TXD0,
 	hps_io_hps_io_emac1_inst_TXD1,
@@ -86,7 +85,6 @@ module testeio (
 	hps_io_hps_io_uart0_inst_RX,
 	hps_io_hps_io_uart0_inst_TX,
 	input_sequence_0_export,
-	inputsequences_export,
 	mem_s2_address,
 	mem_s2_chipselect,
 	mem_s2_clken,
@@ -116,9 +114,8 @@ module testeio (
 	reset_reset_n,
 	sequences_to_process_export,
 	start_processing_chrom_export,
-	startcomm_export,
+	sampleindex_export,
 	valid_output_0_export,
-	validoutputs_export,
 	writesample_export);	
 
 	output	[31:0]	chrom_seg_0_export;
@@ -171,7 +168,6 @@ module testeio (
 	input	[31:0]	error_sum_6_export;
 	input	[31:0]	error_sum_7_export;
 	output	[31:0]	expected_output_0_export;
-	input	[31:0]	expectedoutputs_export;
 	output		hps_io_hps_io_emac1_inst_TX_CLK;
 	output		hps_io_hps_io_emac1_inst_TXD0;
 	output		hps_io_hps_io_emac1_inst_TXD1;
@@ -207,7 +203,6 @@ module testeio (
 	input		hps_io_hps_io_uart0_inst_RX;
 	output		hps_io_hps_io_uart0_inst_TX;
 	output	[31:0]	input_sequence_0_export;
-	input	[31:0]	inputsequences_export;
 	input	[14:0]	mem_s2_address;
 	input		mem_s2_chipselect;
 	input		mem_s2_clken;
@@ -237,8 +232,7 @@ module testeio (
 	input		reset_reset_n;
 	output	[31:0]	sequences_to_process_export;
 	output		start_processing_chrom_export;
-	output	[31:0]	startcomm_export;
+	output	[31:0]	sampleindex_export;
 	output	[31:0]	valid_output_0_export;
-	input	[31:0]	validoutputs_export;
 	output	[31:0]	writesample_export;
 endmodule

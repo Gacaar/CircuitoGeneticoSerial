@@ -49,7 +49,6 @@
 		.error_sum_6_export              (<connected-to-error_sum_6_export>),              //              error_sum_6.export
 		.error_sum_7_export              (<connected-to-error_sum_7_export>),              //              error_sum_7.export
 		.expected_output_0_export        (<connected-to-expected_output_0_export>),        //        expected_output_0.export
-		.expectedoutputs_export          (<connected-to-expectedoutputs_export>),          //          expectedoutputs.export
 		.hps_io_hps_io_emac1_inst_TX_CLK (<connected-to-hps_io_hps_io_emac1_inst_TX_CLK>), //                   hps_io.hps_io_emac1_inst_TX_CLK
 		.hps_io_hps_io_emac1_inst_TXD0   (<connected-to-hps_io_hps_io_emac1_inst_TXD0>),   //                         .hps_io_emac1_inst_TXD0
 		.hps_io_hps_io_emac1_inst_TXD1   (<connected-to-hps_io_hps_io_emac1_inst_TXD1>),   //                         .hps_io_emac1_inst_TXD1
@@ -85,7 +84,6 @@
 		.hps_io_hps_io_uart0_inst_RX     (<connected-to-hps_io_hps_io_uart0_inst_RX>),     //                         .hps_io_uart0_inst_RX
 		.hps_io_hps_io_uart0_inst_TX     (<connected-to-hps_io_hps_io_uart0_inst_TX>),     //                         .hps_io_uart0_inst_TX
 		.input_sequence_0_export         (<connected-to-input_sequence_0_export>),         //         input_sequence_0.export
-		.inputsequences_export           (<connected-to-inputsequences_export>),           //           inputsequences.export
 		.mem_s2_address                  (<connected-to-mem_s2_address>),                  //                   mem_s2.address
 		.mem_s2_chipselect               (<connected-to-mem_s2_chipselect>),               //                         .chipselect
 		.mem_s2_clken                    (<connected-to-mem_s2_clken>),                    //                         .clken
@@ -115,9 +113,8 @@
 		.reset_reset_n                   (<connected-to-reset_reset_n>),                   //                    reset.reset_n
 		.sequences_to_process_export     (<connected-to-sequences_to_process_export>),     //     sequences_to_process.export
 		.start_processing_chrom_export   (<connected-to-start_processing_chrom_export>),   //   start_processing_chrom.export
-		.startcomm_export                (<connected-to-startcomm_export>),                //                startcomm.export
+		.sampleindex_export              (<connected-to-sampleindex_export>),              //              sampleindex.export
 		.valid_output_0_export           (<connected-to-valid_output_0_export>),           //           valid_output_0.export
-		.validoutputs_export             (<connected-to-validoutputs_export>),             //             validoutputs.export
 		.writesample_export              (<connected-to-writesample_export>)               //              writesample.export
 	);
 

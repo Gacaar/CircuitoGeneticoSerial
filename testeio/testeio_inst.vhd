@@ -50,7 +50,6 @@
 			error_sum_6_export              : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
 			error_sum_7_export              : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
 			expected_output_0_export        : out   std_logic_vector(31 downto 0);                    -- export
-			expectedoutputs_export          : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
 			hps_io_hps_io_emac1_inst_TX_CLK : out   std_logic;                                        -- hps_io_emac1_inst_TX_CLK
 			hps_io_hps_io_emac1_inst_TXD0   : out   std_logic;                                        -- hps_io_emac1_inst_TXD0
 			hps_io_hps_io_emac1_inst_TXD1   : out   std_logic;                                        -- hps_io_emac1_inst_TXD1
@@ -86,7 +85,6 @@
 			hps_io_hps_io_uart0_inst_RX     : in    std_logic                     := 'X';             -- hps_io_uart0_inst_RX
 			hps_io_hps_io_uart0_inst_TX     : out   std_logic;                                        -- hps_io_uart0_inst_TX
 			input_sequence_0_export         : out   std_logic_vector(31 downto 0);                    -- export
-			inputsequences_export           : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
 			mem_s2_address                  : in    std_logic_vector(14 downto 0) := (others => 'X'); -- address
 			mem_s2_chipselect               : in    std_logic                     := 'X';             -- chipselect
 			mem_s2_clken                    : in    std_logic                     := 'X';             -- clken
@@ -116,9 +114,8 @@
 			reset_reset_n                   : in    std_logic                     := 'X';             -- reset_n
 			sequences_to_process_export     : out   std_logic_vector(31 downto 0);                    -- export
 			start_processing_chrom_export   : out   std_logic;                                        -- export
-			startcomm_export                : out   std_logic_vector(31 downto 0);                    -- export
+			sampleindex_export              : out   std_logic_vector(31 downto 0);                    -- export
 			valid_output_0_export           : out   std_logic_vector(31 downto 0);                    -- export
-			validoutputs_export             : in    std_logic_vector(31 downto 0) := (others => 'X'); -- export
 			writesample_export              : out   std_logic_vector(31 downto 0)                     -- export
 		);
 	end component testeio;
@@ -175,7 +172,6 @@
 			error_sum_6_export              => CONNECTED_TO_error_sum_6_export,              --              error_sum_6.export
 			error_sum_7_export              => CONNECTED_TO_error_sum_7_export,              --              error_sum_7.export
 			expected_output_0_export        => CONNECTED_TO_expected_output_0_export,        --        expected_output_0.export
-			expectedoutputs_export          => CONNECTED_TO_expectedoutputs_export,          --          expectedoutputs.export
 			hps_io_hps_io_emac1_inst_TX_CLK => CONNECTED_TO_hps_io_hps_io_emac1_inst_TX_CLK, --                   hps_io.hps_io_emac1_inst_TX_CLK
 			hps_io_hps_io_emac1_inst_TXD0   => CONNECTED_TO_hps_io_hps_io_emac1_inst_TXD0,   --                         .hps_io_emac1_inst_TXD0
 			hps_io_hps_io_emac1_inst_TXD1   => CONNECTED_TO_hps_io_hps_io_emac1_inst_TXD1,   --                         .hps_io_emac1_inst_TXD1
@@ -211,7 +207,6 @@
 			hps_io_hps_io_uart0_inst_RX     => CONNECTED_TO_hps_io_hps_io_uart0_inst_RX,     --                         .hps_io_uart0_inst_RX
 			hps_io_hps_io_uart0_inst_TX     => CONNECTED_TO_hps_io_hps_io_uart0_inst_TX,     --                         .hps_io_uart0_inst_TX
 			input_sequence_0_export         => CONNECTED_TO_input_sequence_0_export,         --         input_sequence_0.export
-			inputsequences_export           => CONNECTED_TO_inputsequences_export,           --           inputsequences.export
 			mem_s2_address                  => CONNECTED_TO_mem_s2_address,                  --                   mem_s2.address
 			mem_s2_chipselect               => CONNECTED_TO_mem_s2_chipselect,               --                         .chipselect
 			mem_s2_clken                    => CONNECTED_TO_mem_s2_clken,                    --                         .clken
@@ -241,9 +236,8 @@
 			reset_reset_n                   => CONNECTED_TO_reset_reset_n,                   --                    reset.reset_n
 			sequences_to_process_export     => CONNECTED_TO_sequences_to_process_export,     --     sequences_to_process.export
 			start_processing_chrom_export   => CONNECTED_TO_start_processing_chrom_export,   --   start_processing_chrom.export
-			startcomm_export                => CONNECTED_TO_startcomm_export,                --                startcomm.export
+			sampleindex_export              => CONNECTED_TO_sampleindex_export,              --              sampleindex.export
 			valid_output_0_export           => CONNECTED_TO_valid_output_0_export,           --           valid_output_0.export
-			validoutputs_export             => CONNECTED_TO_validoutputs_export,             --             validoutputs.export
 			writesample_export              => CONNECTED_TO_writesample_export               --              writesample.export
 		);
 

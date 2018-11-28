@@ -14,6 +14,6 @@ parameter NUM_RETRIES = 10000;
 
 parameter CYCLES_TO_IGNORE = 5;
 
-parameter NUM_SAMPLES = 2047, //(2^BITS_SEL)-1
-			 BITS_SEL	 =	11;
+parameter NUM_SAMPLES = 2047,
+			 WAITING_SAMPLE = 1'b1;
 

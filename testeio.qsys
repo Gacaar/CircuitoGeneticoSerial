@@ -673,27 +673,6 @@
          type = "String";
       }
    }
-   element expectedOutputs
-   {
-      datum _sortIndex
-      {
-         value = "54";
-         type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "1";
-         type = "boolean";
-      }
-   }
-   element expectedOutputs.s1
-   {
-      datum baseAddress
-      {
-         value = "262176";
-         type = "String";
-      }
-   }
    element expected_output_0
    {
       datum _sortIndex
@@ -718,22 +697,6 @@
          type = "int";
       }
    }
-   element inputSequences
-   {
-      datum _sortIndex
-      {
-         value = "53";
-         type = "int";
-      }
-   }
-   element inputSequences.s1
-   {
-      datum baseAddress
-      {
-         value = "262208";
-         type = "String";
-      }
-   }
    element input_sequence_0
    {
       datum _sortIndex
@@ -754,7 +717,7 @@
    {
       datum _sortIndex
       {
-         value = "56";
+         value = "53";
          type = "int";
       }
    }
@@ -770,7 +733,7 @@
    {
       datum _sortIndex
       {
-         value = "57";
+         value = "54";
          type = "int";
       }
    }
@@ -798,6 +761,22 @@
          type = "String";
       }
    }
+   element sampleIndex
+   {
+      datum _sortIndex
+      {
+         value = "52";
+         type = "int";
+      }
+   }
+   element sampleIndex.s1
+   {
+      datum baseAddress
+      {
+         value = "262224";
+         type = "String";
+      }
+   }
    element sequences_to_process
    {
       datum _sortIndex
@@ -811,22 +790,6 @@
       datum baseAddress
       {
          value = "262272";
-         type = "String";
-      }
-   }
-   element startComm
-   {
-      datum _sortIndex
-      {
-         value = "52";
-         type = "int";
-      }
-   }
-   element startComm.s1
-   {
-      datum baseAddress
-      {
-         value = "262224";
          type = "String";
       }
    }
@@ -875,22 +838,6 @@
       datum baseAddress
       {
          value = "0";
-         type = "String";
-      }
-   }
-   element validOutputs
-   {
-      datum _sortIndex
-      {
-         value = "55";
-         type = "int";
-      }
-   }
-   element validOutputs.s1
-   {
-      datum baseAddress
-      {
-         value = "262192";
          type = "String";
       }
    }
@@ -1163,20 +1110,10 @@
    internal="expected_output_0.external_connection"
    type="conduit"
    dir="end" />
- <interface
-   name="expectedoutputs"
-   internal="expectedOutputs.external_connection"
-   type="conduit"
-   dir="end" />
  <interface name="hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
  <interface
    name="input_sequence_0"
    internal="input_sequence_0.external_connection"
-   type="conduit"
-   dir="end" />
- <interface
-   name="inputsequences"
-   internal="inputSequences.external_connection"
    type="conduit"
    dir="end" />
  <interface name="mem_s2" internal="two_port_mem.s2" type="avalon" dir="end" />
@@ -1198,6 +1135,11 @@
    dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <interface
+   name="sampleindex"
+   internal="sampleIndex.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
    name="sequences_to_process"
    internal="sequences_to_process.external_connection"
    type="conduit"
@@ -1208,18 +1150,8 @@
    type="conduit"
    dir="end" />
  <interface
-   name="startcomm"
-   internal="startComm.external_connection"
-   type="conduit"
-   dir="end" />
- <interface
    name="valid_output_0"
    internal="valid_output_0.external_connection"
-   type="conduit"
-   dir="end" />
- <interface
-   name="validoutputs"
-   internal="validOutputs.external_connection"
    type="conduit"
    dir="end" />
  <interface
@@ -1972,24 +1904,6 @@
   <parameter name="width" value="32" />
  </module>
  <module
-   name="expectedOutputs"
-   kind="altera_avalon_pio"
-   version="16.1"
-   enabled="1">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="32" />
- </module>
- <module
    name="expected_output_0"
    kind="altera_avalon_pio"
    version="16.1"
@@ -2538,24 +2452,6 @@
   <parameter name="use_default_mpu_clk" value="true" />
  </module>
  <module
-   name="inputSequences"
-   kind="altera_avalon_pio"
-   version="16.1"
-   enabled="1">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="32" />
- </module>
- <module
    name="input_sequence_0"
    kind="altera_avalon_pio"
    version="16.1"
@@ -2624,7 +2520,7 @@
   <parameter name="width" value="1" />
  </module>
  <module
-   name="sequences_to_process"
+   name="sampleIndex"
    kind="altera_avalon_pio"
    version="16.1"
    enabled="1">
@@ -2641,7 +2537,11 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="32" />
  </module>
- <module name="startComm" kind="altera_avalon_pio" version="16.1" enabled="1">
+ <module
+   name="sequences_to_process"
+   kind="altera_avalon_pio"
+   version="16.1"
+   enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -2736,24 +2636,6 @@
   <parameter name="useNonDefaultInitFile" value="false" />
   <parameter name="useShallowMemBlocks" value="false" />
   <parameter name="writable" value="true" />
- </module>
- <module
-   name="validOutputs"
-   kind="altera_avalon_pio"
-   version="16.1"
-   enabled="1">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="32" />
  </module>
  <module
    name="valid_output_0"
@@ -3245,36 +3127,9 @@
    kind="avalon"
    version="16.1"
    start="hps_0.h2f_lw_axi_master"
-   end="startComm.s1">
+   end="sampleIndex.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00040050" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="16.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="inputSequences.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040040" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="16.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="validOutputs.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040030" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="16.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="expectedOutputs.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00040020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -3375,19 +3230,8 @@
    start="clk_0.clk"
    end="expected_output_0.clk" />
  <connection kind="clock" version="16.1" start="clk_0.clk" end="writeSample.clk" />
- <connection kind="clock" version="16.1" start="clk_0.clk" end="startComm.clk" />
- <connection
-   kind="clock"
-   version="16.1"
-   start="clk_0.clk"
-   end="inputSequences.clk" />
- <connection kind="clock" version="16.1" start="clk_0.clk" end="validOutputs.clk" />
+ <connection kind="clock" version="16.1" start="clk_0.clk" end="sampleIndex.clk" />
  <connection kind="clock" version="16.1" start="clk_0.clk" end="nextSample.clk" />
- <connection
-   kind="clock"
-   version="16.1"
-   start="clk_0.clk"
-   end="expectedOutputs.clk" />
  <connection
    kind="clock"
    version="16.1"
@@ -3664,22 +3508,7 @@
    kind="reset"
    version="16.1"
    start="hps_0.h2f_reset"
-   end="startComm.reset" />
- <connection
-   kind="reset"
-   version="16.1"
-   start="hps_0.h2f_reset"
-   end="inputSequences.reset" />
- <connection
-   kind="reset"
-   version="16.1"
-   start="hps_0.h2f_reset"
-   end="expectedOutputs.reset" />
- <connection
-   kind="reset"
-   version="16.1"
-   start="hps_0.h2f_reset"
-   end="validOutputs.reset" />
+   end="sampleIndex.reset" />
  <connection
    kind="reset"
    version="16.1"
