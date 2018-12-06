@@ -1,6 +1,4 @@
-   include "parameters.sv"
-
-module chromosomeProcessingStateMachine
+module ProcessamentoSerial
 	( input wire iClock
 	, input wire [3:0][7:0] iCurrentSerialInput
 	, input wire [3:0][7:0] iCurrentSerialExpectedOutput
@@ -17,11 +15,8 @@ module chromosomeProcessingStateMachine
 	, output wire [NUM_SAMPLES:0][7:0] oValidOutputs
 	);
 	
-	parameter IDLE = 1'b0;
+	reg currentState = SEQ_IDLE;
 	
-	reg currentState = IDLE;
-	
----------------------------------------------
 //declarar registradores, fios e variaveis
 	
 	//saidas
@@ -35,7 +30,7 @@ module chromosomeProcessingStateMachine
 //relacionar essas coisas com as entradas e saidas
 
 assign oNextSample = 
-	currentState == IDLE;
+	currentState == SEQ_IDLE;
 assign oInputSequences = inputSequences;
 assign oExpectedOutputs = expectedOutputs;
 assign oValidOutputs = validOutputs;
@@ -51,7 +46,7 @@ always@ (posedge iClock) begin
 	validOutput <= validOutput;
 	
 	case (currentState)
-	IDLE: begin
+	SEQ_IDLE: begin
 		if (iPreparingNextSample) begin		
 			currentState <= WAITING_SAMPLE;
 		end
@@ -62,7 +57,7 @@ always@ (posedge iClock) begin
 			inputSequences[iSampleIndex] <= iCurrentSerialInput;
 			expectedOutput[iSampleIndex] <= iCurrentSerialExpectedOutput;
 			validOutput[iSampleIndex] <= iCurrentSerialValidOutput;
-			currentState <= IDLE;
+			currentState <= SEQ_IDLE;
 		end
 		
 	end

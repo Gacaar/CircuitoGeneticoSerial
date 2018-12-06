@@ -249,13 +249,13 @@ ProcessamentoSerial fsm
 	, .iCurrentSerialInput(inputSequencesSample)
 	, .iCurrentSerialExpectedOutput(expectedOutputsSample)
 	, .iCurrentSerialValidOutput(validOutputsSample)
+	, .iSampleIndex(sampleIndex) 
 	, .iPreparingNextSample(preparingNextSample)
 	, .iWriteSample(writeSample)
-	, .iSampleIndex(sampleIndex) 
+	, .oNextSample(nextSample)
 	, .oInputSequences(inputSequences)
 	, .oExpectedOutputs(expectedOutputs)
 	, .oValidOutputs(validOutputs)
-	, .oNextSample(nextSample)
 	);
 	
 	

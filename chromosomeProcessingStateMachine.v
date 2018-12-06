@@ -1,4 +1,3 @@
-parameter IDLE = 3'b000;
 module chromosomeProcessingStateMachine
 	( input wire iClock
 	, input wire [991:0] iConcatedChromDescription
