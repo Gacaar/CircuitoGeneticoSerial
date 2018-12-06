@@ -42,21 +42,25 @@ always@ (posedge iClock) begin
 	//executado sempre no inicio, independente do estado
 	//mantem o estado anterior
 	inputSequences <= inputSequences;
-	expectedOutput <= expectedOutput;
-	validOutput <= validOutput;
+	expectedOutputs <= expectedOutputs;
+	validOutputs <= validOutputs;
+	currentState <= currentState;
 	
 	case (currentState)
 	SEQ_IDLE: begin
-		if (iPreparingNextSample) begin		
+		if (iPreparingNextSample) begin
 			currentState <= WAITING_SAMPLE;
+			//inputSequences[iSampleIndex] <= iCurrentSerialInput;
+			//expectedOutputs[iSampleIndex] <= iCurrentSerialExpectedOutput;
+			//validOutputs[iSampleIndex] <= iCurrentSerialValidOutput;
 		end
 	end
 	
 	WAITING_SAMPLE: begin
 		if (iWriteSample) begin		
 			inputSequences[iSampleIndex] <= iCurrentSerialInput;
-			expectedOutput[iSampleIndex] <= iCurrentSerialExpectedOutput;
-			validOutput[iSampleIndex] <= iCurrentSerialValidOutput;
+			expectedOutputs[iSampleIndex] <= iCurrentSerialExpectedOutput;
+			validOutputs[iSampleIndex] <= iCurrentSerialValidOutput;
 			currentState <= SEQ_IDLE;
 		end
 		

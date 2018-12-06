@@ -112,9 +112,9 @@
 			preparingnextsample_export      : out   std_logic_vector(31 downto 0);                    -- export
 			ready_to_process_export         : in    std_logic                     := 'X';             -- export
 			reset_reset_n                   : in    std_logic                     := 'X';             -- reset_n
+			sampleindex_export              : out   std_logic_vector(31 downto 0);                    -- export
 			sequences_to_process_export     : out   std_logic_vector(31 downto 0);                    -- export
 			start_processing_chrom_export   : out   std_logic;                                        -- export
-			sampleindex_export              : out   std_logic_vector(31 downto 0);                    -- export
 			valid_output_0_export           : out   std_logic_vector(31 downto 0);                    -- export
 			writesample_export              : out   std_logic_vector(31 downto 0)                     -- export
 		);

@@ -214,10 +214,10 @@ testeio u0 (
 		  .input_sequence_0_export					({ inputSequencesSample[3], inputSequencesSample[2], inputSequencesSample[1], inputSequencesSample[0] }),
 		  .expected_output_0_export				({ expectedOutputsSample[3], expectedOutputsSample[2], expectedOutputsSample[1], expectedOutputsSample[0] }),
 		  .valid_output_0_export					({validOutputsSample[3], validOutputsSample[2], validOutputsSample[1], validOutputsSample[0] }),
-		  .preparingNextSample_export				(preparingNextSample),
-		  .writeSample_export						(writeSample),
-		  .sampleIndex_export						(sampleIndex),
-		  .nextSample_export							(nextSample),
+		  .preparingnextsample_export				(preparingNextSample),
+		  .writesample_export						(writeSample),
+		  .sampleindex_export						(sampleIndex),
+		  .nextsample_export							(nextSample),
 		  
 		  .sequences_to_process_export         (sequencesToProcess),
 		  .start_processing_chrom_export       (startProcessingChrom),   // start_processing_chrom.export

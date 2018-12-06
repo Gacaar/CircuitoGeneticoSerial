@@ -29,9 +29,9 @@
 // Generation parameters:
 //   output_name:         testeio_mm_interconnect_0_cmd_demux
 //   ST_DATA_W:           122
-//   ST_CHANNEL_W:        56
-//   NUM_OUTPUTS:         56
-//   VALID_WIDTH:         56
+//   ST_CHANNEL_W:        53
+//   NUM_OUTPUTS:         53
+//   VALID_WIDTH:         53
 // ------------------------------------------
 
 //------------------------------------------
@@ -45,9 +45,9 @@ module testeio_mm_interconnect_0_cmd_demux
     // -------------------
     // Sink
     // -------------------
-    input  [56-1      : 0]   sink_valid,
+    input  [53-1      : 0]   sink_valid,
     input  [122-1    : 0]   sink_data, // ST_DATA_W=122
-    input  [56-1 : 0]   sink_channel, // ST_CHANNEL_W=56
+    input  [53-1 : 0]   sink_channel, // ST_CHANNEL_W=53
     input                         sink_startofpacket,
     input                         sink_endofpacket,
     output                        sink_ready,
@@ -57,395 +57,374 @@ module testeio_mm_interconnect_0_cmd_demux
     // -------------------
     output reg                      src0_valid,
     output reg [122-1    : 0] src0_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src0_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src0_channel, // ST_CHANNEL_W=53
     output reg                      src0_startofpacket,
     output reg                      src0_endofpacket,
     input                           src0_ready,
 
     output reg                      src1_valid,
     output reg [122-1    : 0] src1_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src1_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src1_channel, // ST_CHANNEL_W=53
     output reg                      src1_startofpacket,
     output reg                      src1_endofpacket,
     input                           src1_ready,
 
     output reg                      src2_valid,
     output reg [122-1    : 0] src2_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src2_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src2_channel, // ST_CHANNEL_W=53
     output reg                      src2_startofpacket,
     output reg                      src2_endofpacket,
     input                           src2_ready,
 
     output reg                      src3_valid,
     output reg [122-1    : 0] src3_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src3_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src3_channel, // ST_CHANNEL_W=53
     output reg                      src3_startofpacket,
     output reg                      src3_endofpacket,
     input                           src3_ready,
 
     output reg                      src4_valid,
     output reg [122-1    : 0] src4_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src4_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src4_channel, // ST_CHANNEL_W=53
     output reg                      src4_startofpacket,
     output reg                      src4_endofpacket,
     input                           src4_ready,
 
     output reg                      src5_valid,
     output reg [122-1    : 0] src5_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src5_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src5_channel, // ST_CHANNEL_W=53
     output reg                      src5_startofpacket,
     output reg                      src5_endofpacket,
     input                           src5_ready,
 
     output reg                      src6_valid,
     output reg [122-1    : 0] src6_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src6_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src6_channel, // ST_CHANNEL_W=53
     output reg                      src6_startofpacket,
     output reg                      src6_endofpacket,
     input                           src6_ready,
 
     output reg                      src7_valid,
     output reg [122-1    : 0] src7_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src7_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src7_channel, // ST_CHANNEL_W=53
     output reg                      src7_startofpacket,
     output reg                      src7_endofpacket,
     input                           src7_ready,
 
     output reg                      src8_valid,
     output reg [122-1    : 0] src8_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src8_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src8_channel, // ST_CHANNEL_W=53
     output reg                      src8_startofpacket,
     output reg                      src8_endofpacket,
     input                           src8_ready,
 
     output reg                      src9_valid,
     output reg [122-1    : 0] src9_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src9_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src9_channel, // ST_CHANNEL_W=53
     output reg                      src9_startofpacket,
     output reg                      src9_endofpacket,
     input                           src9_ready,
 
     output reg                      src10_valid,
     output reg [122-1    : 0] src10_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src10_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src10_channel, // ST_CHANNEL_W=53
     output reg                      src10_startofpacket,
     output reg                      src10_endofpacket,
     input                           src10_ready,
 
     output reg                      src11_valid,
     output reg [122-1    : 0] src11_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src11_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src11_channel, // ST_CHANNEL_W=53
     output reg                      src11_startofpacket,
     output reg                      src11_endofpacket,
     input                           src11_ready,
 
     output reg                      src12_valid,
     output reg [122-1    : 0] src12_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src12_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src12_channel, // ST_CHANNEL_W=53
     output reg                      src12_startofpacket,
     output reg                      src12_endofpacket,
     input                           src12_ready,
 
     output reg                      src13_valid,
     output reg [122-1    : 0] src13_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src13_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src13_channel, // ST_CHANNEL_W=53
     output reg                      src13_startofpacket,
     output reg                      src13_endofpacket,
     input                           src13_ready,
 
     output reg                      src14_valid,
     output reg [122-1    : 0] src14_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src14_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src14_channel, // ST_CHANNEL_W=53
     output reg                      src14_startofpacket,
     output reg                      src14_endofpacket,
     input                           src14_ready,
 
     output reg                      src15_valid,
     output reg [122-1    : 0] src15_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src15_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src15_channel, // ST_CHANNEL_W=53
     output reg                      src15_startofpacket,
     output reg                      src15_endofpacket,
     input                           src15_ready,
 
     output reg                      src16_valid,
     output reg [122-1    : 0] src16_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src16_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src16_channel, // ST_CHANNEL_W=53
     output reg                      src16_startofpacket,
     output reg                      src16_endofpacket,
     input                           src16_ready,
 
     output reg                      src17_valid,
     output reg [122-1    : 0] src17_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src17_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src17_channel, // ST_CHANNEL_W=53
     output reg                      src17_startofpacket,
     output reg                      src17_endofpacket,
     input                           src17_ready,
 
     output reg                      src18_valid,
     output reg [122-1    : 0] src18_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src18_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src18_channel, // ST_CHANNEL_W=53
     output reg                      src18_startofpacket,
     output reg                      src18_endofpacket,
     input                           src18_ready,
 
     output reg                      src19_valid,
     output reg [122-1    : 0] src19_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src19_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src19_channel, // ST_CHANNEL_W=53
     output reg                      src19_startofpacket,
     output reg                      src19_endofpacket,
     input                           src19_ready,
 
     output reg                      src20_valid,
     output reg [122-1    : 0] src20_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src20_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src20_channel, // ST_CHANNEL_W=53
     output reg                      src20_startofpacket,
     output reg                      src20_endofpacket,
     input                           src20_ready,
 
     output reg                      src21_valid,
     output reg [122-1    : 0] src21_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src21_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src21_channel, // ST_CHANNEL_W=53
     output reg                      src21_startofpacket,
     output reg                      src21_endofpacket,
     input                           src21_ready,
 
     output reg                      src22_valid,
     output reg [122-1    : 0] src22_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src22_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src22_channel, // ST_CHANNEL_W=53
     output reg                      src22_startofpacket,
     output reg                      src22_endofpacket,
     input                           src22_ready,
 
     output reg                      src23_valid,
     output reg [122-1    : 0] src23_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src23_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src23_channel, // ST_CHANNEL_W=53
     output reg                      src23_startofpacket,
     output reg                      src23_endofpacket,
     input                           src23_ready,
 
     output reg                      src24_valid,
     output reg [122-1    : 0] src24_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src24_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src24_channel, // ST_CHANNEL_W=53
     output reg                      src24_startofpacket,
     output reg                      src24_endofpacket,
     input                           src24_ready,
 
     output reg                      src25_valid,
     output reg [122-1    : 0] src25_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src25_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src25_channel, // ST_CHANNEL_W=53
     output reg                      src25_startofpacket,
     output reg                      src25_endofpacket,
     input                           src25_ready,
 
     output reg                      src26_valid,
     output reg [122-1    : 0] src26_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src26_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src26_channel, // ST_CHANNEL_W=53
     output reg                      src26_startofpacket,
     output reg                      src26_endofpacket,
     input                           src26_ready,
 
     output reg                      src27_valid,
     output reg [122-1    : 0] src27_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src27_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src27_channel, // ST_CHANNEL_W=53
     output reg                      src27_startofpacket,
     output reg                      src27_endofpacket,
     input                           src27_ready,
 
     output reg                      src28_valid,
     output reg [122-1    : 0] src28_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src28_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src28_channel, // ST_CHANNEL_W=53
     output reg                      src28_startofpacket,
     output reg                      src28_endofpacket,
     input                           src28_ready,
 
     output reg                      src29_valid,
     output reg [122-1    : 0] src29_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src29_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src29_channel, // ST_CHANNEL_W=53
     output reg                      src29_startofpacket,
     output reg                      src29_endofpacket,
     input                           src29_ready,
 
     output reg                      src30_valid,
     output reg [122-1    : 0] src30_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src30_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src30_channel, // ST_CHANNEL_W=53
     output reg                      src30_startofpacket,
     output reg                      src30_endofpacket,
     input                           src30_ready,
 
     output reg                      src31_valid,
     output reg [122-1    : 0] src31_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src31_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src31_channel, // ST_CHANNEL_W=53
     output reg                      src31_startofpacket,
     output reg                      src31_endofpacket,
     input                           src31_ready,
 
     output reg                      src32_valid,
     output reg [122-1    : 0] src32_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src32_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src32_channel, // ST_CHANNEL_W=53
     output reg                      src32_startofpacket,
     output reg                      src32_endofpacket,
     input                           src32_ready,
 
     output reg                      src33_valid,
     output reg [122-1    : 0] src33_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src33_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src33_channel, // ST_CHANNEL_W=53
     output reg                      src33_startofpacket,
     output reg                      src33_endofpacket,
     input                           src33_ready,
 
     output reg                      src34_valid,
     output reg [122-1    : 0] src34_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src34_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src34_channel, // ST_CHANNEL_W=53
     output reg                      src34_startofpacket,
     output reg                      src34_endofpacket,
     input                           src34_ready,
 
     output reg                      src35_valid,
     output reg [122-1    : 0] src35_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src35_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src35_channel, // ST_CHANNEL_W=53
     output reg                      src35_startofpacket,
     output reg                      src35_endofpacket,
     input                           src35_ready,
 
     output reg                      src36_valid,
     output reg [122-1    : 0] src36_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src36_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src36_channel, // ST_CHANNEL_W=53
     output reg                      src36_startofpacket,
     output reg                      src36_endofpacket,
     input                           src36_ready,
 
     output reg                      src37_valid,
     output reg [122-1    : 0] src37_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src37_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src37_channel, // ST_CHANNEL_W=53
     output reg                      src37_startofpacket,
     output reg                      src37_endofpacket,
     input                           src37_ready,
 
     output reg                      src38_valid,
     output reg [122-1    : 0] src38_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src38_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src38_channel, // ST_CHANNEL_W=53
     output reg                      src38_startofpacket,
     output reg                      src38_endofpacket,
     input                           src38_ready,
 
     output reg                      src39_valid,
     output reg [122-1    : 0] src39_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src39_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src39_channel, // ST_CHANNEL_W=53
     output reg                      src39_startofpacket,
     output reg                      src39_endofpacket,
     input                           src39_ready,
 
     output reg                      src40_valid,
     output reg [122-1    : 0] src40_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src40_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src40_channel, // ST_CHANNEL_W=53
     output reg                      src40_startofpacket,
     output reg                      src40_endofpacket,
     input                           src40_ready,
 
     output reg                      src41_valid,
     output reg [122-1    : 0] src41_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src41_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src41_channel, // ST_CHANNEL_W=53
     output reg                      src41_startofpacket,
     output reg                      src41_endofpacket,
     input                           src41_ready,
 
     output reg                      src42_valid,
     output reg [122-1    : 0] src42_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src42_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src42_channel, // ST_CHANNEL_W=53
     output reg                      src42_startofpacket,
     output reg                      src42_endofpacket,
     input                           src42_ready,
 
     output reg                      src43_valid,
     output reg [122-1    : 0] src43_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src43_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src43_channel, // ST_CHANNEL_W=53
     output reg                      src43_startofpacket,
     output reg                      src43_endofpacket,
     input                           src43_ready,
 
     output reg                      src44_valid,
     output reg [122-1    : 0] src44_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src44_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src44_channel, // ST_CHANNEL_W=53
     output reg                      src44_startofpacket,
     output reg                      src44_endofpacket,
     input                           src44_ready,
 
     output reg                      src45_valid,
     output reg [122-1    : 0] src45_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src45_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src45_channel, // ST_CHANNEL_W=53
     output reg                      src45_startofpacket,
     output reg                      src45_endofpacket,
     input                           src45_ready,
 
     output reg                      src46_valid,
     output reg [122-1    : 0] src46_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src46_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src46_channel, // ST_CHANNEL_W=53
     output reg                      src46_startofpacket,
     output reg                      src46_endofpacket,
     input                           src46_ready,
 
     output reg                      src47_valid,
     output reg [122-1    : 0] src47_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src47_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src47_channel, // ST_CHANNEL_W=53
     output reg                      src47_startofpacket,
     output reg                      src47_endofpacket,
     input                           src47_ready,
 
     output reg                      src48_valid,
     output reg [122-1    : 0] src48_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src48_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src48_channel, // ST_CHANNEL_W=53
     output reg                      src48_startofpacket,
     output reg                      src48_endofpacket,
     input                           src48_ready,
 
     output reg                      src49_valid,
     output reg [122-1    : 0] src49_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src49_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src49_channel, // ST_CHANNEL_W=53
     output reg                      src49_startofpacket,
     output reg                      src49_endofpacket,
     input                           src49_ready,
 
     output reg                      src50_valid,
     output reg [122-1    : 0] src50_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src50_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src50_channel, // ST_CHANNEL_W=53
     output reg                      src50_startofpacket,
     output reg                      src50_endofpacket,
     input                           src50_ready,
 
     output reg                      src51_valid,
     output reg [122-1    : 0] src51_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src51_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src51_channel, // ST_CHANNEL_W=53
     output reg                      src51_startofpacket,
     output reg                      src51_endofpacket,
     input                           src51_ready,
 
     output reg                      src52_valid,
     output reg [122-1    : 0] src52_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src52_channel, // ST_CHANNEL_W=56
+    output reg [53-1 : 0] src52_channel, // ST_CHANNEL_W=53
     output reg                      src52_startofpacket,
     output reg                      src52_endofpacket,
     input                           src52_ready,
-
-    output reg                      src53_valid,
-    output reg [122-1    : 0] src53_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src53_channel, // ST_CHANNEL_W=56
-    output reg                      src53_startofpacket,
-    output reg                      src53_endofpacket,
-    input                           src53_ready,
-
-    output reg                      src54_valid,
-    output reg [122-1    : 0] src54_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src54_channel, // ST_CHANNEL_W=56
-    output reg                      src54_startofpacket,
-    output reg                      src54_endofpacket,
-    input                           src54_ready,
-
-    output reg                      src55_valid,
-    output reg [122-1    : 0] src55_data, // ST_DATA_W=122
-    output reg [56-1 : 0] src55_channel, // ST_CHANNEL_W=56
-    output reg                      src55_startofpacket,
-    output reg                      src55_endofpacket,
-    input                           src55_ready,
 
 
     // -------------------
@@ -458,7 +437,7 @@ module testeio_mm_interconnect_0_cmd_demux
 
 );
 
-    localparam NUM_OUTPUTS = 56;
+    localparam NUM_OUTPUTS = 53;
     wire [NUM_OUTPUTS - 1 : 0] ready_vector;
 
     // -------------------
@@ -836,27 +815,6 @@ module testeio_mm_interconnect_0_cmd_demux
 
         src52_valid         = sink_channel[52] && sink_valid[52];
 
-        src53_data          = sink_data;
-        src53_startofpacket = sink_startofpacket;
-        src53_endofpacket   = sink_endofpacket;
-        src53_channel       = sink_channel >> NUM_OUTPUTS;
-
-        src53_valid         = sink_channel[53] && sink_valid[53];
-
-        src54_data          = sink_data;
-        src54_startofpacket = sink_startofpacket;
-        src54_endofpacket   = sink_endofpacket;
-        src54_channel       = sink_channel >> NUM_OUTPUTS;
-
-        src54_valid         = sink_channel[54] && sink_valid[54];
-
-        src55_data          = sink_data;
-        src55_startofpacket = sink_startofpacket;
-        src55_endofpacket   = sink_endofpacket;
-        src55_channel       = sink_channel >> NUM_OUTPUTS;
-
-        src55_valid         = sink_channel[55] && sink_valid[55];
-
     end
 
     // -------------------
@@ -915,9 +873,6 @@ module testeio_mm_interconnect_0_cmd_demux
     assign ready_vector[50] = src50_ready;
     assign ready_vector[51] = src51_ready;
     assign ready_vector[52] = src52_ready;
-    assign ready_vector[53] = src53_ready;
-    assign ready_vector[54] = src54_ready;
-    assign ready_vector[55] = src55_ready;
 
     assign sink_ready = |(sink_channel & ready_vector);
 

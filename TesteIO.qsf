@@ -1151,7 +1151,6 @@ set_global_assignment -name VERILOG_FILE logic_e.v
 set_global_assignment -name VERILOG_FILE genetico.v
 set_global_assignment -name VERILOG_FILE fenotipo.v
 set_global_assignment -name QSYS_FILE testeio.qsys
-set_global_assignment -name QIP_FILE testeio/synthesis/testeio.qip
 set_global_assignment -name CDF_FILE output_files/prog.cdf
 set_global_assignment -name VERILOG_FILE chromosomeProcessingStateMachine.v
 set_global_assignment -name SYSTEMVERILOG_FILE parameters.sv

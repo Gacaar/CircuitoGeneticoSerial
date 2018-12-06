@@ -1,6 +1,6 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate "C:\PIBIC\Codes_Updated\Quartus - Serial\circuito-genetico-master\testeio.qsys" --block-symbol-file --output-directory="C:\PIBIC\Codes_Updated\Quartus - Serial\circuito-genetico-master\testeio" --family="Cyclone V" --part=5CSEMA5F31C6
-Progress: Loading circuito-genetico-master/testeio.qsys
+Info: qsys-generate C:\Users\dougl\OneDrive\Documentos\CircuitoGeneticoSerial\testeio.qsys --block-symbol-file --output-directory=C:\Users\dougl\OneDrive\Documentos\CircuitoGeneticoSerial\testeio --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading CircuitoGeneticoSerial/testeio.qsys
 Progress: Reading input file
 Progress: Adding chrom_seg_0 [altera_avalon_pio 16.1]
 Progress: Parameterizing module chrom_seg_0
@@ -86,14 +86,10 @@ Progress: Adding error_sum_6 [altera_avalon_pio 16.1]
 Progress: Parameterizing module error_sum_6
 Progress: Adding error_sum_7 [altera_avalon_pio 16.1]
 Progress: Parameterizing module error_sum_7
-Progress: Adding expectedOutputs [altera_avalon_pio 16.1]
-Progress: Parameterizing module expectedOutputs
 Progress: Adding expected_output_0 [altera_avalon_pio 16.1]
 Progress: Parameterizing module expected_output_0
 Progress: Adding hps_0 [altera_hps 16.1]
 Progress: Parameterizing module hps_0
-Progress: Adding inputSequences [altera_avalon_pio 16.1]
-Progress: Parameterizing module inputSequences
 Progress: Adding input_sequence_0 [altera_avalon_pio 16.1]
 Progress: Parameterizing module input_sequence_0
 Progress: Adding nextSample [altera_avalon_pio 16.1]
@@ -102,18 +98,16 @@ Progress: Adding preparingNextSample [altera_avalon_pio 16.1]
 Progress: Parameterizing module preparingNextSample
 Progress: Adding ready_to_process [altera_avalon_pio 16.1]
 Progress: Parameterizing module ready_to_process
+Progress: Adding sampleIndex [altera_avalon_pio 16.1]
+Progress: Parameterizing module sampleIndex
 Progress: Adding sequences_to_process [altera_avalon_pio 16.1]
 Progress: Parameterizing module sequences_to_process
-Progress: Adding startWriting [altera_avalon_pio 16.1]
-Progress: Parameterizing module startWriting
 Progress: Adding start_processing_chrom [altera_avalon_pio 16.1]
 Progress: Parameterizing module start_processing_chrom
 Progress: Adding two_port_mem [altera_avalon_onchip_memory2 16.1]
 Progress: Parameterizing module two_port_mem
 Progress: Adding two_port_mem_correct [altera_avalon_onchip_memory2 16.1]
 Progress: Parameterizing module two_port_mem_correct
-Progress: Adding validOutputs [altera_avalon_pio 16.1]
-Progress: Parameterizing module validOutputs
 Progress: Adding valid_output_0 [altera_avalon_pio 16.1]
 Progress: Parameterizing module valid_output_0
 Progress: Adding writeSample [altera_avalon_pio 16.1]
@@ -131,23 +125,20 @@ Info: testeio.error_sum_4: PIO inputs are not hardwired in test bench. Undefined
 Info: testeio.error_sum_5: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: testeio.error_sum_6: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: testeio.error_sum_7: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
-Info: testeio.expectedOutputs: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: testeio.hps_0: HPS Main PLL counter settings: n = 0  m = 73
 Info: testeio.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Warning: testeio.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
 Warning: testeio.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
-Info: testeio.inputSequences: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: testeio.nextSample: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: testeio.ready_to_process: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
-Info: testeio.validOutputs: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Warning: testeio.: You have exported the interface two_port_mem_correct.s2 but not its associated reset interface.  Export the driver(s) of two_port_mem_correct.reset2
 Warning: testeio.: You have exported the interface two_port_mem.s2 but not its associated reset interface.  Export the driver(s) of two_port_mem.reset2
 Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate "C:\PIBIC\Codes_Updated\Quartus - Serial\circuito-genetico-master\testeio.qsys" --synthesis=VERILOG --output-directory="C:\PIBIC\Codes_Updated\Quartus - Serial\circuito-genetico-master\testeio\synthesis" --family="Cyclone V" --part=5CSEMA5F31C6
-Progress: Loading circuito-genetico-master/testeio.qsys
+Info: qsys-generate C:\Users\dougl\OneDrive\Documentos\CircuitoGeneticoSerial\testeio.qsys --synthesis=VERILOG --output-directory=C:\Users\dougl\OneDrive\Documentos\CircuitoGeneticoSerial\testeio\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading CircuitoGeneticoSerial/testeio.qsys
 Progress: Reading input file
 Progress: Adding chrom_seg_0 [altera_avalon_pio 16.1]
 Progress: Parameterizing module chrom_seg_0
@@ -233,14 +224,10 @@ Progress: Adding error_sum_6 [altera_avalon_pio 16.1]
 Progress: Parameterizing module error_sum_6
 Progress: Adding error_sum_7 [altera_avalon_pio 16.1]
 Progress: Parameterizing module error_sum_7
-Progress: Adding expectedOutputs [altera_avalon_pio 16.1]
-Progress: Parameterizing module expectedOutputs
 Progress: Adding expected_output_0 [altera_avalon_pio 16.1]
 Progress: Parameterizing module expected_output_0
 Progress: Adding hps_0 [altera_hps 16.1]
 Progress: Parameterizing module hps_0
-Progress: Adding inputSequences [altera_avalon_pio 16.1]
-Progress: Parameterizing module inputSequences
 Progress: Adding input_sequence_0 [altera_avalon_pio 16.1]
 Progress: Parameterizing module input_sequence_0
 Progress: Adding nextSample [altera_avalon_pio 16.1]
@@ -249,18 +236,16 @@ Progress: Adding preparingNextSample [altera_avalon_pio 16.1]
 Progress: Parameterizing module preparingNextSample
 Progress: Adding ready_to_process [altera_avalon_pio 16.1]
 Progress: Parameterizing module ready_to_process
+Progress: Adding sampleIndex [altera_avalon_pio 16.1]
+Progress: Parameterizing module sampleIndex
 Progress: Adding sequences_to_process [altera_avalon_pio 16.1]
 Progress: Parameterizing module sequences_to_process
-Progress: Adding startWriting [altera_avalon_pio 16.1]
-Progress: Parameterizing module startWriting
 Progress: Adding start_processing_chrom [altera_avalon_pio 16.1]
 Progress: Parameterizing module start_processing_chrom
 Progress: Adding two_port_mem [altera_avalon_onchip_memory2 16.1]
 Progress: Parameterizing module two_port_mem
 Progress: Adding two_port_mem_correct [altera_avalon_onchip_memory2 16.1]
 Progress: Parameterizing module two_port_mem_correct
-Progress: Adding validOutputs [altera_avalon_pio 16.1]
-Progress: Parameterizing module validOutputs
 Progress: Adding valid_output_0 [altera_avalon_pio 16.1]
 Progress: Parameterizing module valid_output_0
 Progress: Adding writeSample [altera_avalon_pio 16.1]
@@ -278,32 +263,29 @@ Info: testeio.error_sum_4: PIO inputs are not hardwired in test bench. Undefined
 Info: testeio.error_sum_5: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: testeio.error_sum_6: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: testeio.error_sum_7: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
-Info: testeio.expectedOutputs: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: testeio.hps_0: HPS Main PLL counter settings: n = 0  m = 73
 Info: testeio.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Warning: testeio.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
 Warning: testeio.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
-Info: testeio.inputSequences: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: testeio.nextSample: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: testeio.ready_to_process: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
-Info: testeio.validOutputs: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Warning: testeio.: You have exported the interface two_port_mem_correct.s2 but not its associated reset interface.  Export the driver(s) of two_port_mem_correct.reset2
 Warning: testeio.: You have exported the interface two_port_mem.s2 but not its associated reset interface.  Export the driver(s) of two_port_mem.reset2
 Info: testeio: Generating testeio "testeio" for QUARTUS_SYNTH
 Info: chrom_seg_0: Starting RTL generation for module 'testeio_chrom_seg_0'
-Info: chrom_seg_0:   Generation command is [exec C:/intelfpga_lite/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/16.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=testeio_chrom_seg_0 --dir=C:/Users/GaCaAr/AppData/Local/Temp/alt7857_9094925057092462597.dir/0005_chrom_seg_0_gen/ --quartus_dir=C:/intelfpga_lite/16.1/quartus --verilog --config=C:/Users/GaCaAr/AppData/Local/Temp/alt7857_9094925057092462597.dir/0005_chrom_seg_0_gen//testeio_chrom_seg_0_component_configuration.pl  --do_build_sim=0  ]
+Info: chrom_seg_0:   Generation command is [exec C:/intelfpga_lite/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/16.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=testeio_chrom_seg_0 --dir=C:/Users/dougl/AppData/Local/Temp/alt7871_8686203795798094768.dir/0001_chrom_seg_0_gen/ --quartus_dir=C:/intelfpga_lite/16.1/quartus --verilog --config=C:/Users/dougl/AppData/Local/Temp/alt7871_8686203795798094768.dir/0001_chrom_seg_0_gen//testeio_chrom_seg_0_component_configuration.pl  --do_build_sim=0  ]
 Info: chrom_seg_0: Done RTL generation for module 'testeio_chrom_seg_0'
 Info: chrom_seg_0: "testeio" instantiated altera_avalon_pio "chrom_seg_0"
 Info: done_processing_chrom: Starting RTL generation for module 'testeio_done_processing_chrom'
-Info: done_processing_chrom:   Generation command is [exec C:/intelfpga_lite/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/16.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=testeio_done_processing_chrom --dir=C:/Users/GaCaAr/AppData/Local/Temp/alt7857_9094925057092462597.dir/0006_done_processing_chrom_gen/ --quartus_dir=C:/intelfpga_lite/16.1/quartus --verilog --config=C:/Users/GaCaAr/AppData/Local/Temp/alt7857_9094925057092462597.dir/0006_done_processing_chrom_gen//testeio_done_processing_chrom_component_configuration.pl  --do_build_sim=0  ]
+Info: done_processing_chrom:   Generation command is [exec C:/intelfpga_lite/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/16.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=testeio_done_processing_chrom --dir=C:/Users/dougl/AppData/Local/Temp/alt7871_8686203795798094768.dir/0002_done_processing_chrom_gen/ --quartus_dir=C:/intelfpga_lite/16.1/quartus --verilog --config=C:/Users/dougl/AppData/Local/Temp/alt7871_8686203795798094768.dir/0002_done_processing_chrom_gen//testeio_done_processing_chrom_component_configuration.pl  --do_build_sim=0  ]
 Info: done_processing_chrom: Done RTL generation for module 'testeio_done_processing_chrom'
 Info: done_processing_chrom: "testeio" instantiated altera_avalon_pio "done_processing_chrom"
 Info: done_processing_feedback: Starting RTL generation for module 'testeio_done_processing_feedback'
-Info: done_processing_feedback:   Generation command is [exec C:/intelfpga_lite/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/16.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=testeio_done_processing_feedback --dir=C:/Users/GaCaAr/AppData/Local/Temp/alt7857_9094925057092462597.dir/0007_done_processing_feedback_gen/ --quartus_dir=C:/intelfpga_lite/16.1/quartus --verilog --config=C:/Users/GaCaAr/AppData/Local/Temp/alt7857_9094925057092462597.dir/0007_done_processing_feedback_gen//testeio_done_processing_feedback_component_configuration.pl  --do_build_sim=0  ]
+Info: done_processing_feedback:   Generation command is [exec C:/intelfpga_lite/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/16.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=testeio_done_processing_feedback --dir=C:/Users/dougl/AppData/Local/Temp/alt7871_8686203795798094768.dir/0003_done_processing_feedback_gen/ --quartus_dir=C:/intelfpga_lite/16.1/quartus --verilog --config=C:/Users/dougl/AppData/Local/Temp/alt7871_8686203795798094768.dir/0003_done_processing_feedback_gen//testeio_done_processing_feedback_component_configuration.pl  --do_build_sim=0  ]
 Info: done_processing_feedback: Done RTL generation for module 'testeio_done_processing_feedback'
 Info: done_processing_feedback: "testeio" instantiated altera_avalon_pio "done_processing_feedback"
 Info: error_sum_0: Starting RTL generation for module 'testeio_error_sum_0'
-Info: error_sum_0:   Generation command is [exec C:/intelfpga_lite/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/16.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=testeio_error_sum_0 --dir=C:/Users/GaCaAr/AppData/Local/Temp/alt7857_9094925057092462597.dir/0008_error_sum_0_gen/ --quartus_dir=C:/intelfpga_lite/16.1/quartus --verilog --config=C:/Users/GaCaAr/AppData/Local/Temp/alt7857_9094925057092462597.dir/0008_error_sum_0_gen//testeio_error_sum_0_component_configuration.pl  --do_build_sim=0  ]
+Info: error_sum_0:   Generation command is [exec C:/intelfpga_lite/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/16.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=testeio_error_sum_0 --dir=C:/Users/dougl/AppData/Local/Temp/alt7871_8686203795798094768.dir/0004_error_sum_0_gen/ --quartus_dir=C:/intelfpga_lite/16.1/quartus --verilog --config=C:/Users/dougl/AppData/Local/Temp/alt7871_8686203795798094768.dir/0004_error_sum_0_gen//testeio_error_sum_0_component_configuration.pl  --do_build_sim=0  ]
 Info: error_sum_0: Done RTL generation for module 'testeio_error_sum_0'
 Info: error_sum_0: "testeio" instantiated altera_avalon_pio "error_sum_0"
 Info: hps_0: "Running  for module: hps_0"
@@ -313,11 +295,11 @@ Warning: hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_
 Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
 Info: hps_0: "testeio" instantiated altera_hps "hps_0"
 Info: two_port_mem: Starting RTL generation for module 'testeio_two_port_mem'
-Info: two_port_mem:   Generation command is [exec C:/intelfpga_lite/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/16.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=testeio_two_port_mem --dir=C:/Users/GaCaAr/AppData/Local/Temp/alt7857_9094925057092462597.dir/0009_two_port_mem_gen/ --quartus_dir=C:/intelfpga_lite/16.1/quartus --verilog --config=C:/Users/GaCaAr/AppData/Local/Temp/alt7857_9094925057092462597.dir/0009_two_port_mem_gen//testeio_two_port_mem_component_configuration.pl  --do_build_sim=0  ]
+Info: two_port_mem:   Generation command is [exec C:/intelfpga_lite/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/16.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=testeio_two_port_mem --dir=C:/Users/dougl/AppData/Local/Temp/alt7871_8686203795798094768.dir/0005_two_port_mem_gen/ --quartus_dir=C:/intelfpga_lite/16.1/quartus --verilog --config=C:/Users/dougl/AppData/Local/Temp/alt7871_8686203795798094768.dir/0005_two_port_mem_gen//testeio_two_port_mem_component_configuration.pl  --do_build_sim=0  ]
 Info: two_port_mem: Done RTL generation for module 'testeio_two_port_mem'
 Info: two_port_mem: "testeio" instantiated altera_avalon_onchip_memory2 "two_port_mem"
 Info: two_port_mem_correct: Starting RTL generation for module 'testeio_two_port_mem_correct'
-Info: two_port_mem_correct:   Generation command is [exec C:/intelfpga_lite/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/16.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=testeio_two_port_mem_correct --dir=C:/Users/GaCaAr/AppData/Local/Temp/alt7857_9094925057092462597.dir/0010_two_port_mem_correct_gen/ --quartus_dir=C:/intelfpga_lite/16.1/quartus --verilog --config=C:/Users/GaCaAr/AppData/Local/Temp/alt7857_9094925057092462597.dir/0010_two_port_mem_correct_gen//testeio_two_port_mem_correct_component_configuration.pl  --do_build_sim=0  ]
+Info: two_port_mem_correct:   Generation command is [exec C:/intelfpga_lite/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/16.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/16.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=testeio_two_port_mem_correct --dir=C:/Users/dougl/AppData/Local/Temp/alt7871_8686203795798094768.dir/0006_two_port_mem_correct_gen/ --quartus_dir=C:/intelfpga_lite/16.1/quartus --verilog --config=C:/Users/dougl/AppData/Local/Temp/alt7871_8686203795798094768.dir/0006_two_port_mem_correct_gen//testeio_two_port_mem_correct_component_configuration.pl  --do_build_sim=0  ]
 Info: two_port_mem_correct: Done RTL generation for module 'testeio_two_port_mem_correct'
 Info: two_port_mem_correct: "testeio" instantiated altera_avalon_onchip_memory2 "two_port_mem_correct"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -373,9 +355,6 @@ Info: avalon_st_adapter_049: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_050: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_051: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_052: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_053: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_054: Inserting error_adapter: error_adapter_0
-Info: avalon_st_adapter_055: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "testeio" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: rst_controller: "testeio" instantiated altera_reset_controller "rst_controller"
 Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
@@ -387,15 +366,15 @@ Info: chrom_seg_0_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_ava
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
 Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
-Info: Reusing file C:/PIBIC/Codes_Updated/Quartus - Serial/circuito-genetico-master/testeio/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file C:/Users/dougl/OneDrive/Documentos/CircuitoGeneticoSerial/testeio/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: chrom_seg_0_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "chrom_seg_0_s1_burst_adapter"
-Info: Reusing file C:/PIBIC/Codes_Updated/Quartus - Serial/circuito-genetico-master/testeio/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file C:/PIBIC/Codes_Updated/Quartus - Serial/circuito-genetico-master/testeio/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file C:/Users/dougl/OneDrive/Documentos/CircuitoGeneticoSerial/testeio/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/dougl/OneDrive/Documentos/CircuitoGeneticoSerial/testeio/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file C:/PIBIC/Codes_Updated/Quartus - Serial/circuito-genetico-master/testeio/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/dougl/OneDrive/Documentos/CircuitoGeneticoSerial/testeio/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"

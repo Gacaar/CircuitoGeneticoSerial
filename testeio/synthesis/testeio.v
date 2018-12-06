@@ -54,7 +54,6 @@ module testeio (
 		input  wire [31:0] error_sum_6_export,              //              error_sum_6.export
 		input  wire [31:0] error_sum_7_export,              //              error_sum_7.export
 		output wire [31:0] expected_output_0_export,        //        expected_output_0.export
-		input  wire [31:0] expectedoutputs_export,          //          expectedoutputs.export
 		output wire        hps_io_hps_io_emac1_inst_TX_CLK, //                   hps_io.hps_io_emac1_inst_TX_CLK
 		output wire        hps_io_hps_io_emac1_inst_TXD0,   //                         .hps_io_emac1_inst_TXD0
 		output wire        hps_io_hps_io_emac1_inst_TXD1,   //                         .hps_io_emac1_inst_TXD1
@@ -90,7 +89,6 @@ module testeio (
 		input  wire        hps_io_hps_io_uart0_inst_RX,     //                         .hps_io_uart0_inst_RX
 		output wire        hps_io_hps_io_uart0_inst_TX,     //                         .hps_io_uart0_inst_TX
 		output wire [31:0] input_sequence_0_export,         //         input_sequence_0.export
-		input  wire [31:0] inputsequences_export,           //           inputsequences.export
 		input  wire [14:0] mem_s2_address,                  //                   mem_s2.address
 		input  wire        mem_s2_chipselect,               //                         .chipselect
 		input  wire        mem_s2_clken,                    //                         .clken
@@ -118,11 +116,10 @@ module testeio (
 		output wire [31:0] preparingnextsample_export,      //      preparingnextsample.export
 		input  wire        ready_to_process_export,         //         ready_to_process.export
 		input  wire        reset_reset_n,                   //                    reset.reset_n
+		output wire [31:0] sampleindex_export,              //              sampleindex.export
 		output wire [31:0] sequences_to_process_export,     //     sequences_to_process.export
 		output wire        start_processing_chrom_export,   //   start_processing_chrom.export
-		output wire [31:0] startwriting_export,             //             startwriting.export
 		output wire [31:0] valid_output_0_export,           //           valid_output_0.export
-		input  wire [31:0] validoutputs_export,             //             validoutputs.export
 		output wire [31:0] writesample_export               //              writesample.export
 	);
 
@@ -386,17 +383,11 @@ module testeio (
 	wire   [1:0] mm_interconnect_0_writesample_s1_address;                 // mm_interconnect_0:writeSample_s1_address -> writeSample:address
 	wire         mm_interconnect_0_writesample_s1_write;                   // mm_interconnect_0:writeSample_s1_write -> writeSample:write_n
 	wire  [31:0] mm_interconnect_0_writesample_s1_writedata;               // mm_interconnect_0:writeSample_s1_writedata -> writeSample:writedata
-	wire         mm_interconnect_0_startwriting_s1_chipselect;             // mm_interconnect_0:startWriting_s1_chipselect -> startWriting:chipselect
-	wire  [31:0] mm_interconnect_0_startwriting_s1_readdata;               // startWriting:readdata -> mm_interconnect_0:startWriting_s1_readdata
-	wire   [1:0] mm_interconnect_0_startwriting_s1_address;                // mm_interconnect_0:startWriting_s1_address -> startWriting:address
-	wire         mm_interconnect_0_startwriting_s1_write;                  // mm_interconnect_0:startWriting_s1_write -> startWriting:write_n
-	wire  [31:0] mm_interconnect_0_startwriting_s1_writedata;              // mm_interconnect_0:startWriting_s1_writedata -> startWriting:writedata
-	wire  [31:0] mm_interconnect_0_inputsequences_s1_readdata;             // inputSequences:readdata -> mm_interconnect_0:inputSequences_s1_readdata
-	wire   [1:0] mm_interconnect_0_inputsequences_s1_address;              // mm_interconnect_0:inputSequences_s1_address -> inputSequences:address
-	wire  [31:0] mm_interconnect_0_validoutputs_s1_readdata;               // validOutputs:readdata -> mm_interconnect_0:validOutputs_s1_readdata
-	wire   [1:0] mm_interconnect_0_validoutputs_s1_address;                // mm_interconnect_0:validOutputs_s1_address -> validOutputs:address
-	wire  [31:0] mm_interconnect_0_expectedoutputs_s1_readdata;            // expectedOutputs:readdata -> mm_interconnect_0:expectedOutputs_s1_readdata
-	wire   [1:0] mm_interconnect_0_expectedoutputs_s1_address;             // mm_interconnect_0:expectedOutputs_s1_address -> expectedOutputs:address
+	wire         mm_interconnect_0_sampleindex_s1_chipselect;              // mm_interconnect_0:sampleIndex_s1_chipselect -> sampleIndex:chipselect
+	wire  [31:0] mm_interconnect_0_sampleindex_s1_readdata;                // sampleIndex:readdata -> mm_interconnect_0:sampleIndex_s1_readdata
+	wire   [1:0] mm_interconnect_0_sampleindex_s1_address;                 // mm_interconnect_0:sampleIndex_s1_address -> sampleIndex:address
+	wire         mm_interconnect_0_sampleindex_s1_write;                   // mm_interconnect_0:sampleIndex_s1_write -> sampleIndex:write_n
+	wire  [31:0] mm_interconnect_0_sampleindex_s1_writedata;               // mm_interconnect_0:sampleIndex_s1_writedata -> sampleIndex:writedata
 	wire  [31:0] mm_interconnect_0_nextsample_s1_readdata;                 // nextSample:readdata -> mm_interconnect_0:nextSample_s1_readdata
 	wire   [1:0] mm_interconnect_0_nextsample_s1_address;                  // mm_interconnect_0:nextSample_s1_address -> nextSample:address
 	wire         mm_interconnect_0_preparingnextsample_s1_chipselect;      // mm_interconnect_0:preparingNextSample_s1_chipselect -> preparingNextSample:chipselect
@@ -404,7 +395,7 @@ module testeio (
 	wire   [1:0] mm_interconnect_0_preparingnextsample_s1_address;         // mm_interconnect_0:preparingNextSample_s1_address -> preparingNextSample:address
 	wire         mm_interconnect_0_preparingnextsample_s1_write;           // mm_interconnect_0:preparingNextSample_s1_write -> preparingNextSample:write_n
 	wire  [31:0] mm_interconnect_0_preparingnextsample_s1_writedata;       // mm_interconnect_0:preparingNextSample_s1_writedata -> preparingNextSample:writedata
-	wire         rst_controller_reset_out_reset;                           // rst_controller:reset_out -> [chrom_seg_0:reset_n, chrom_seg_10:reset_n, chrom_seg_11:reset_n, chrom_seg_12:reset_n, chrom_seg_13:reset_n, chrom_seg_14:reset_n, chrom_seg_15:reset_n, chrom_seg_16:reset_n, chrom_seg_17:reset_n, chrom_seg_18:reset_n, chrom_seg_19:reset_n, chrom_seg_1:reset_n, chrom_seg_20:reset_n, chrom_seg_21:reset_n, chrom_seg_22:reset_n, chrom_seg_23:reset_n, chrom_seg_24:reset_n, chrom_seg_25:reset_n, chrom_seg_26:reset_n, chrom_seg_27:reset_n, chrom_seg_28:reset_n, chrom_seg_29:reset_n, chrom_seg_2:reset_n, chrom_seg_30:reset_n, chrom_seg_3:reset_n, chrom_seg_4:reset_n, chrom_seg_5:reset_n, chrom_seg_6:reset_n, chrom_seg_7:reset_n, chrom_seg_8:reset_n, chrom_seg_9:reset_n, done_processing_chrom:reset_n, done_processing_feedback:reset_n, error_sum_0:reset_n, error_sum_1:reset_n, error_sum_2:reset_n, error_sum_3:reset_n, error_sum_4:reset_n, error_sum_5:reset_n, error_sum_6:reset_n, error_sum_7:reset_n, expectedOutputs:reset_n, expected_output_0:reset_n, inputSequences:reset_n, input_sequence_0:reset_n, mm_interconnect_0:chrom_seg_0_reset_reset_bridge_in_reset_reset, nextSample:reset_n, preparingNextSample:reset_n, ready_to_process:reset_n, rst_translator:in_reset, sequences_to_process:reset_n, startWriting:reset_n, start_processing_chrom:reset_n, two_port_mem:reset, two_port_mem:reset2, two_port_mem_correct:reset, two_port_mem_correct:reset2, validOutputs:reset_n, valid_output_0:reset_n, writeSample:reset_n]
+	wire         rst_controller_reset_out_reset;                           // rst_controller:reset_out -> [chrom_seg_0:reset_n, chrom_seg_10:reset_n, chrom_seg_11:reset_n, chrom_seg_12:reset_n, chrom_seg_13:reset_n, chrom_seg_14:reset_n, chrom_seg_15:reset_n, chrom_seg_16:reset_n, chrom_seg_17:reset_n, chrom_seg_18:reset_n, chrom_seg_19:reset_n, chrom_seg_1:reset_n, chrom_seg_20:reset_n, chrom_seg_21:reset_n, chrom_seg_22:reset_n, chrom_seg_23:reset_n, chrom_seg_24:reset_n, chrom_seg_25:reset_n, chrom_seg_26:reset_n, chrom_seg_27:reset_n, chrom_seg_28:reset_n, chrom_seg_29:reset_n, chrom_seg_2:reset_n, chrom_seg_30:reset_n, chrom_seg_3:reset_n, chrom_seg_4:reset_n, chrom_seg_5:reset_n, chrom_seg_6:reset_n, chrom_seg_7:reset_n, chrom_seg_8:reset_n, chrom_seg_9:reset_n, done_processing_chrom:reset_n, done_processing_feedback:reset_n, error_sum_0:reset_n, error_sum_1:reset_n, error_sum_2:reset_n, error_sum_3:reset_n, error_sum_4:reset_n, error_sum_5:reset_n, error_sum_6:reset_n, error_sum_7:reset_n, expected_output_0:reset_n, input_sequence_0:reset_n, mm_interconnect_0:chrom_seg_0_reset_reset_bridge_in_reset_reset, nextSample:reset_n, preparingNextSample:reset_n, ready_to_process:reset_n, rst_translator:in_reset, sampleIndex:reset_n, sequences_to_process:reset_n, start_processing_chrom:reset_n, two_port_mem:reset, two_port_mem:reset2, two_port_mem_correct:reset, two_port_mem_correct:reset2, valid_output_0:reset_n, writeSample:reset_n]
 	wire         rst_controller_reset_out_reset_req;                       // rst_controller:reset_req -> [rst_translator:reset_req_in, two_port_mem:reset_req, two_port_mem:reset_req2, two_port_mem_correct:reset_req, two_port_mem_correct:reset_req2]
 	wire         hps_0_h2f_reset_reset;                                    // hps_0:h2f_rst_n -> rst_controller:reset_in0
 
@@ -832,14 +823,6 @@ module testeio (
 		.in_port  (error_sum_7_export)                         // external_connection.export
 	);
 
-	testeio_error_sum_0 expectedoutputs (
-		.clk      (clk_clk),                                       //                 clk.clk
-		.reset_n  (~rst_controller_reset_out_reset),               //               reset.reset_n
-		.address  (mm_interconnect_0_expectedoutputs_s1_address),  //                  s1.address
-		.readdata (mm_interconnect_0_expectedoutputs_s1_readdata), //                    .readdata
-		.in_port  (expectedoutputs_export)                         // external_connection.export
-	);
-
 	testeio_chrom_seg_0 expected_output_0 (
 		.clk        (clk_clk),                                           //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),                   //               reset.reset_n
@@ -1021,14 +1004,6 @@ module testeio (
 		.h2f_lw_RREADY            (hps_0_h2f_lw_axi_master_rready)   //                  .rready
 	);
 
-	testeio_error_sum_0 inputsequences (
-		.clk      (clk_clk),                                      //                 clk.clk
-		.reset_n  (~rst_controller_reset_out_reset),              //               reset.reset_n
-		.address  (mm_interconnect_0_inputsequences_s1_address),  //                  s1.address
-		.readdata (mm_interconnect_0_inputsequences_s1_readdata), //                    .readdata
-		.in_port  (inputsequences_export)                         // external_connection.export
-	);
-
 	testeio_chrom_seg_0 input_sequence_0 (
 		.clk        (clk_clk),                                          //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),                  //               reset.reset_n
@@ -1067,6 +1042,17 @@ module testeio (
 		.in_port  (ready_to_process_export)                         // external_connection.export
 	);
 
+	testeio_chrom_seg_0 sampleindex (
+		.clk        (clk_clk),                                     //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),             //               reset.reset_n
+		.address    (mm_interconnect_0_sampleindex_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_sampleindex_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_sampleindex_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_sampleindex_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_sampleindex_s1_readdata),   //                    .readdata
+		.out_port   (sampleindex_export)                           // external_connection.export
+	);
+
 	testeio_chrom_seg_0 sequences_to_process (
 		.clk        (clk_clk),                                              //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),                      //               reset.reset_n
@@ -1076,17 +1062,6 @@ module testeio (
 		.chipselect (mm_interconnect_0_sequences_to_process_s1_chipselect), //                    .chipselect
 		.readdata   (mm_interconnect_0_sequences_to_process_s1_readdata),   //                    .readdata
 		.out_port   (sequences_to_process_export)                           // external_connection.export
-	);
-
-	testeio_chrom_seg_0 startwriting (
-		.clk        (clk_clk),                                      //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),              //               reset.reset_n
-		.address    (mm_interconnect_0_startwriting_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_startwriting_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_startwriting_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_startwriting_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_startwriting_s1_readdata),   //                    .readdata
-		.out_port   (startwriting_export)                           // external_connection.export
 	);
 
 	testeio_done_processing_feedback start_processing_chrom (
@@ -1146,14 +1121,6 @@ module testeio (
 		.reset2      (rst_controller_reset_out_reset),                       // reset2.reset
 		.reset_req2  (rst_controller_reset_out_reset_req),                   //       .reset_req
 		.freeze      (1'b0)                                                  // (terminated)
-	);
-
-	testeio_error_sum_0 validoutputs (
-		.clk      (clk_clk),                                    //                 clk.clk
-		.reset_n  (~rst_controller_reset_out_reset),            //               reset.reset_n
-		.address  (mm_interconnect_0_validoutputs_s1_address),  //                  s1.address
-		.readdata (mm_interconnect_0_validoutputs_s1_readdata), //                    .readdata
-		.in_port  (validoutputs_export)                         // external_connection.export
 	);
 
 	testeio_chrom_seg_0 valid_output_0 (
@@ -1400,15 +1367,11 @@ module testeio (
 		.expected_output_0_s1_readdata                 (mm_interconnect_0_expected_output_0_s1_readdata),          //                                        .readdata
 		.expected_output_0_s1_writedata                (mm_interconnect_0_expected_output_0_s1_writedata),         //                                        .writedata
 		.expected_output_0_s1_chipselect               (mm_interconnect_0_expected_output_0_s1_chipselect),        //                                        .chipselect
-		.expectedOutputs_s1_address                    (mm_interconnect_0_expectedoutputs_s1_address),             //                      expectedOutputs_s1.address
-		.expectedOutputs_s1_readdata                   (mm_interconnect_0_expectedoutputs_s1_readdata),            //                                        .readdata
 		.input_sequence_0_s1_address                   (mm_interconnect_0_input_sequence_0_s1_address),            //                     input_sequence_0_s1.address
 		.input_sequence_0_s1_write                     (mm_interconnect_0_input_sequence_0_s1_write),              //                                        .write
 		.input_sequence_0_s1_readdata                  (mm_interconnect_0_input_sequence_0_s1_readdata),           //                                        .readdata
 		.input_sequence_0_s1_writedata                 (mm_interconnect_0_input_sequence_0_s1_writedata),          //                                        .writedata
 		.input_sequence_0_s1_chipselect                (mm_interconnect_0_input_sequence_0_s1_chipselect),         //                                        .chipselect
-		.inputSequences_s1_address                     (mm_interconnect_0_inputsequences_s1_address),              //                       inputSequences_s1.address
-		.inputSequences_s1_readdata                    (mm_interconnect_0_inputsequences_s1_readdata),             //                                        .readdata
 		.nextSample_s1_address                         (mm_interconnect_0_nextsample_s1_address),                  //                           nextSample_s1.address
 		.nextSample_s1_readdata                        (mm_interconnect_0_nextsample_s1_readdata),                 //                                        .readdata
 		.preparingNextSample_s1_address                (mm_interconnect_0_preparingnextsample_s1_address),         //                  preparingNextSample_s1.address
@@ -1418,6 +1381,11 @@ module testeio (
 		.preparingNextSample_s1_chipselect             (mm_interconnect_0_preparingnextsample_s1_chipselect),      //                                        .chipselect
 		.ready_to_process_s1_address                   (mm_interconnect_0_ready_to_process_s1_address),            //                     ready_to_process_s1.address
 		.ready_to_process_s1_readdata                  (mm_interconnect_0_ready_to_process_s1_readdata),           //                                        .readdata
+		.sampleIndex_s1_address                        (mm_interconnect_0_sampleindex_s1_address),                 //                          sampleIndex_s1.address
+		.sampleIndex_s1_write                          (mm_interconnect_0_sampleindex_s1_write),                   //                                        .write
+		.sampleIndex_s1_readdata                       (mm_interconnect_0_sampleindex_s1_readdata),                //                                        .readdata
+		.sampleIndex_s1_writedata                      (mm_interconnect_0_sampleindex_s1_writedata),               //                                        .writedata
+		.sampleIndex_s1_chipselect                     (mm_interconnect_0_sampleindex_s1_chipselect),              //                                        .chipselect
 		.sequences_to_process_s1_address               (mm_interconnect_0_sequences_to_process_s1_address),        //                 sequences_to_process_s1.address
 		.sequences_to_process_s1_write                 (mm_interconnect_0_sequences_to_process_s1_write),          //                                        .write
 		.sequences_to_process_s1_readdata              (mm_interconnect_0_sequences_to_process_s1_readdata),       //                                        .readdata
@@ -1428,11 +1396,6 @@ module testeio (
 		.start_processing_chrom_s1_readdata            (mm_interconnect_0_start_processing_chrom_s1_readdata),     //                                        .readdata
 		.start_processing_chrom_s1_writedata           (mm_interconnect_0_start_processing_chrom_s1_writedata),    //                                        .writedata
 		.start_processing_chrom_s1_chipselect          (mm_interconnect_0_start_processing_chrom_s1_chipselect),   //                                        .chipselect
-		.startWriting_s1_address                       (mm_interconnect_0_startwriting_s1_address),                //                         startWriting_s1.address
-		.startWriting_s1_write                         (mm_interconnect_0_startwriting_s1_write),                  //                                        .write
-		.startWriting_s1_readdata                      (mm_interconnect_0_startwriting_s1_readdata),               //                                        .readdata
-		.startWriting_s1_writedata                     (mm_interconnect_0_startwriting_s1_writedata),              //                                        .writedata
-		.startWriting_s1_chipselect                    (mm_interconnect_0_startwriting_s1_chipselect),             //                                        .chipselect
 		.two_port_mem_s1_address                       (mm_interconnect_0_two_port_mem_s1_address),                //                         two_port_mem_s1.address
 		.two_port_mem_s1_write                         (mm_interconnect_0_two_port_mem_s1_write),                  //                                        .write
 		.two_port_mem_s1_readdata                      (mm_interconnect_0_two_port_mem_s1_readdata),               //                                        .readdata
@@ -1452,8 +1415,6 @@ module testeio (
 		.valid_output_0_s1_readdata                    (mm_interconnect_0_valid_output_0_s1_readdata),             //                                        .readdata
 		.valid_output_0_s1_writedata                   (mm_interconnect_0_valid_output_0_s1_writedata),            //                                        .writedata
 		.valid_output_0_s1_chipselect                  (mm_interconnect_0_valid_output_0_s1_chipselect),           //                                        .chipselect
-		.validOutputs_s1_address                       (mm_interconnect_0_validoutputs_s1_address),                //                         validOutputs_s1.address
-		.validOutputs_s1_readdata                      (mm_interconnect_0_validoutputs_s1_readdata),               //                                        .readdata
 		.writeSample_s1_address                        (mm_interconnect_0_writesample_s1_address),                 //                          writeSample_s1.address
 		.writeSample_s1_write                          (mm_interconnect_0_writesample_s1_write),                   //                                        .write
 		.writeSample_s1_readdata                       (mm_interconnect_0_writesample_s1_readdata),                //                                        .readdata
