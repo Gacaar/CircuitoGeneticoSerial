@@ -1,9 +1,9 @@
 module chromosomeProcessingStateMachine
 	( input wire iClock
 	, input wire [991:0] iConcatedChromDescription
-	, input wire [63:0][7:0] iInputSequence
-	, input wire [63:0][7:0] iExpectedOutput
-	, input wire [63:0][7:0] iValidOutput
+	, input wire [NUM_SAMPLES:0][7:0] iInputSequence
+	, input wire [NUM_SAMPLES:0][7:0] iExpectedOutput
+	, input wire [NUM_SAMPLES:0][7:0] iValidOutput
 	, input wire [7:0] iHardCodedInput
 	, input wire iUseHardcodedInput
 	, input wire iUseLastManualInput
