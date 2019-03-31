@@ -41,7 +41,10 @@ module top(
 	inout wire [7:0] HPS_USB_DATA,
 	input wire HPS_USB_DIR,
 	input wire HPS_USB_NXT,
-	output wire HPS_USB_STP
+	output wire HPS_USB_STP,
+	
+	//TESTE
+	output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5	// Displays Hex
 );
 
 
@@ -81,7 +84,10 @@ wire doneProcessingChrom;
 wire doneFilling;
 
 assign LEDR[6:0] = chromOutput[6:0];
-assign LEDR[9:7] = state;
+assign LEDR[9] = nextSample;//state;
+assign LEDR[8] = preparingNextSample;
+//TESTE DE SINAL DO PROCESSAMENTOSERIAL
+wire [23:0]teste;
 
 assign concatedChromInput = {
 	rawChromInput[30],
@@ -256,8 +262,46 @@ ProcessamentoSerial fsm
 	, .oInputSequences(inputSequences)
 	, .oExpectedOutputs(expectedOutputs)
 	, .oValidOutputs(validOutputs)
+	, .verificacao(teste)
 	);
+
 	
+//VERIFICAÇÃO DE QUANTAS AMOSTRAS SÃO PROCESSADAS	
+//Count verificador(
+//	.entrada(nextSample),
+//	.data(contagem[23:0]) //contagem esta sendo usado como teste para ver os registradores
+//);
+
+
+Decoder7 Dec0 (
+	.in(teste[3:0]),
+	.out(HEX0)
+	);
+
+Decoder7 Dec1 (
+	.in(teste[7:4]),
+	.out(HEX1)
+	);
+
+Decoder7 Dec2 (
+	.in(teste[11:8]),
+	.out(HEX2)
+	);
+
+Decoder7 Dec3 (
+	.in(teste[15:12]),
+	.out(HEX3)
+);
+
+Decoder7 Dec4 (
+	.in(teste[19:16]),
+	.out(HEX4)
+);
+
+Decoder7 Dec5 (
+	.in(teste[23:20]),
+	.out(HEX5)
+);
 	
 chromosomeProcessingStateMachine cpsm
 	( .iClock(CLOCK_50)
