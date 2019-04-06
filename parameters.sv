@@ -15,7 +15,7 @@ parameter NUM_RETRIES = 10000;
 
 parameter CYCLES_TO_IGNORE = 5;
 
-parameter NUM_SAMPLES = 63,
+parameter NUM_SAMPLES = 1023,
 			 WAITING_SAMPLE = 1'b1,
 			 SEQ_IDLE = 1'b0;
 
