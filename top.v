@@ -59,7 +59,7 @@ wire writeSample;
 wire [31:0] sampleIndex;
 wire [NUM_SAMPLES:0][7:0] inputSequences;
 wire [NUM_SAMPLES:0][7:0] expectedOutputs;
-wire [NUM_SAMPLES:0][7:0] ValidOutputs;
+wire [NUM_SAMPLES:0][7:0] validOutputs;
 wire nextSample;
 wire preparingNextSample;
 
@@ -275,32 +275,32 @@ ProcessamentoSerial fsm
 
 
 Decoder7 Dec0 (
-	.in(teste[3:0]),
+	.in(inputSequences[sequenceIDX][3:0]),
 	.out(HEX0)
 	);
 
 Decoder7 Dec1 (
-	.in(teste[7:4]),
+	.in(inputSequences[sequenceIDX][7:4]),
 	.out(HEX1)
 	);
 
 Decoder7 Dec2 (
-	.in(teste[11:8]),
+	.in(expectedOutputs[sequenceIDX][3:0]),
 	.out(HEX2)
 	);
 
 Decoder7 Dec3 (
-	.in(teste[15:12]),
+	.in(expectedOutputs[sequenceIDX][7:4]),
 	.out(HEX3)
 );
 
 Decoder7 Dec4 (
-	.in(teste[19:16]),
+	.in(sequenceIDX[3:0]),
 	.out(HEX4)
 );
 
 Decoder7 Dec5 (
-	.in(teste[23:20]),
+	.in(sequenceIDX[7:4]),
 	.out(HEX5)
 );
 	
@@ -333,5 +333,16 @@ chromosomeProcessingStateMachine cpsm
 	, .oWriteToMem(writeToMem)
 	, .oWriteToCorrectMem(writeToCorrectMem)
 	);
+	
+	integer sequenceIDX = 0;
+	always @(negedge KEY[1] ) begin
+		if( sequenceIDX == sequencesToProcess - 1) begin
+			sequenceIDX = 0;
+		end else begin
+			sequenceIDX = sequenceIDX+1;
+		end
+	
+	end
+	
 	 
 endmodule
