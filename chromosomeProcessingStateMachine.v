@@ -211,12 +211,17 @@ end
 
 assign chromDesc = currentState == ZEROING_VRC ? 992'b0 : iConcatedChromDescription;
 
-fenotipo fenotipo 
+fenotipo fenotipo1 
 	( .cromossomo(chromDesc)
 	, .chromIn(currentInput)
-	, .chromOut(chromosomeOutput)
+	, .chromOut(chromosomeOutput[3:0])
 	);
-
+	
+fenotipo fenotipo2 
+	( .cromossomo(chromDesc)
+	, .chromIn(currentInput)
+	, .chromOut(chromosomeOutput[7:4])
+	);
 
 /*
 Circuito2x2manual circ

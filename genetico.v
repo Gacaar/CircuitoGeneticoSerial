@@ -1,16 +1,16 @@
 module genetico(conf_les, conf_outs, chromIn, chromOut);
 
 	input [26:0][14:0] conf_les;
-	input [7:0][5:0] conf_outs;
+	input [3:0][5:0] conf_outs;
 	input [7:0] chromIn;
-	output [7:0] chromOut;
+	output [3:0] chromOut;
 	
 	wire [26:0] le_out;
 	wire [34:0] all_inputs;
 	
 	assign all_inputs = {le_out, chromIn};
 	
-	assign chromOut = {all_inputs[conf_outs[7]], all_inputs[conf_outs[6]], all_inputs[conf_outs[5]], all_inputs[conf_outs[4]], all_inputs[conf_outs[3]], all_inputs[conf_outs[2]], all_inputs[conf_outs[1]], all_inputs[conf_outs[0]]};
+	assign chromOut = {all_inputs[conf_outs[3]], all_inputs[conf_outs[2]], all_inputs[conf_outs[1]], all_inputs[conf_outs[0]]};
 	
 logic_e le00(
 	.conf_func(conf_les[0][14:12]),
