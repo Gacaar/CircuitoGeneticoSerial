@@ -44,7 +44,9 @@ module top(
 	output wire HPS_USB_STP,
 	
 	//TESTE
-	output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5	// Displays Hex
+	output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5,	// Displays Hex
+	output [23:0] GPIO_0, GPIO_1
+
 );
 
 
@@ -332,6 +334,20 @@ chromosomeProcessingStateMachine cpsm
 	, .oCorrectMemAddr(correctMemAddress)
 	, .oWriteToMem(writeToMem)
 	, .oWriteToCorrectMem(writeToCorrectMem)
+	
+	, .iEntrada1(concatedChromInput[7:0])
+	, .iEntrada2(concatedChromInput[15:8])
+	, .iEntrada3(concatedChromInput[23:16])
+	, .iEntrada4(concatedChromInput[31:24])
+	, .iEntrada5(concatedChromInput[39:32])
+	, .iEntrada6(concatedChromInput[47:40])
+	
+	, .oSaida(GPIO_0[7:0])
+	, .oSegundaSaida(GPIO_0[15:8])
+	, .oTerceiraSaida(GPIO_0[23:16])
+	, .oQuartaSaida(GPIO_1[7:0])
+	, .oQuintaSaida(GPIO_1[15:8])
+	, .oSextaSaida(GPIO_1[23:16])
 	);
 	
 	integer sequenceIDX = 0;

@@ -2,7 +2,7 @@ module logic_e(conf_func, conf_ins, all_inputs, leOut);
 
 	input [2:0] conf_func;
 	input [11:0] conf_ins;
-	input [36:0] all_inputs;
+	input [35:0] all_inputs;
 	output leOut;
 	
 	wire all_funcs[7:0];
