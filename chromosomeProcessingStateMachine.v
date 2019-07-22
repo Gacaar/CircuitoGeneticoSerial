@@ -27,19 +27,19 @@ module chromosomeProcessingStateMachine
 	, output wire oWriteToMem
 	, output wire oWriteToCorrectMem
 	//----------------------------------------- FIOS DE TESTE --------------------------------------------
-	, input wire [7:0]iEntrada1
-	, input wire [7:0]iEntrada2
-	, input wire [7:0]iEntrada3
-	, input wire [7:0]iEntrada4
-	, input wire [7:0]iEntrada5
-	, input wire [7:0]iEntrada6
+	//, input wire [7:0]iEntrada1
+	//, input wire [7:0]iEntrada2
+	//, input wire [7:0]iEntrada3
+	//, input wire [7:0]iEntrada4
+	//, input wire [7:0]iEntrada5
+	//, input wire [7:0]iEntrada6
 	
-	, output wire [7:0] oSaida				//SAIDAS DE TESTE DE MAX EL LOGIC
-	, output wire [7:0] oSegundaSaida
-	, output wire [7:0] oTerceiraSaida
-	, output wire [7:0] oQuartaSaida
-	, output wire [7:0] oQuintaSaida
-	, output wire [7:0] oSextaSaida
+	//, output wire [7:0] oSaida				//SAIDAS DE TESTE DE MAX EL LOGIC
+	//, output wire [7:0] oSegundaSaida
+	//, output wire [7:0] oTerceiraSaida
+	//, output wire [7:0] oQuartaSaida
+	//, output wire [7:0] oQuintaSaida
+	//, output wire [7:0] oSextaSaida
 	);
 	
    `include "parameters.sv"
@@ -59,12 +59,12 @@ module chromosomeProcessingStateMachine
    
 	wire [31:0] clockChangeCycles;
 	wire [31:0] chromosomeOutput;
-	wire [7:0] SaidaTeste;		//	SAIDA DE TESTE PARA INSTANCIA
-	wire [7:0] SaidaTeste2;	//SAIDA DE TESTE PARA INSTANCIA
-	wire [7:0] SaidaTeste3;   //SAISA DE TESTE PARA INSTANCIA
-	wire [7:0] SaidaTeste4;
-	wire [7:0] SaidaTeste5;
-	wire [7:0] SaidaTeste6;
+	//wire [7:0] SaidaTeste;		//	SAIDA DE TESTE PARA INSTANCIA
+	//wire [7:0] SaidaTeste2;	//SAIDA DE TESTE PARA INSTANCIA
+	//wire [7:0] SaidaTeste3;   //SAISA DE TESTE PARA INSTANCIA
+	//wire [7:0] SaidaTeste4;
+	//wire [7:0] SaidaTeste5;
+	//wire [7:0] SaidaTeste6;
 	wire [991:0] chromDesc;
 
 assign oReadyToProcess =
@@ -75,12 +75,12 @@ assign oDoneProcessing =
 	
 assign oChromOutput = chromosomeOutput;
 
-assign oSaida = SaidaTeste;				//TESTE DE INSTANCIA
-assign oSegundaSaida = SaidaTeste2;		//TESTE DE INSTANCIA
-assign oTerceiraSaida = SaidaTeste3;	//TESTE DE INSTANCIA
-assign oQuartaSaida = SaidaTeste4;
-assign oQuintaSaida = SaidaTeste5;
-assign oSextaSaida = SaidaTeste6;
+//assign oSaida = SaidaTeste;				//TESTE DE INSTANCIA
+//assign oSegundaSaida = SaidaTeste2;		//TESTE DE INSTANCIA
+//assign oTerceiraSaida = SaidaTeste3;	//TESTE DE INSTANCIA
+//assign oQuartaSaida = SaidaTeste4;
+//assign oQuintaSaida = SaidaTeste5;
+//assign oSextaSaida = SaidaTeste6;
 
 assign oState = currentState;
 
@@ -244,7 +244,7 @@ fenotipo fenotipo0
 	, .chromOut(chromosomeOutput)
 	);
 	
-fenotipo fenotipo1 
+/*fenotipo fenotipo1 
 	( .cromossomo(chromDesc)
 	, .chromIn(iEntrada1)
 	, .chromOut(SaidaTeste)
@@ -279,8 +279,8 @@ fenotipo fenotipo6
 	, .chromIn(iEntrada6)
 	, .chromOut(SaidaTeste6)
 	);
-	
-/*
+
+*//*
 Circuito2x2manual circ
 	( .inp(inputToUse)
 	, .out(chromosomeOutput)
