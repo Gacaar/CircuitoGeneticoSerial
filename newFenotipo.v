@@ -1,15 +1,10 @@
-
-
-module top(
-	input [ROW*COL*16+$clog2(ROW*COL)*OUT-1:0]cromossomo,
-	input [IN-1:0] inp,
-	output [OUT-1:0]out
+module newFenotipo(
+	input [259:0]cromossomo,
+	input [3:0] inp,
+	output [0:0]out
 
 );
-
-	`include "parameters.sv"
-
-	wire [ROW-1:0][COL-1:0][15:0]descricao;
+	wire [3:0][3:0][15:0]descricao;
 	
 	genvar i, j;
 	generate

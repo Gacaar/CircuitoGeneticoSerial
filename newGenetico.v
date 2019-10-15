@@ -1,36 +1,14 @@
 module newGenetico(saidas_LE, out_chrom, inp, out);
 
-	input wire [ROW-1:0][COL-1:0][15:0] saidas_LE; 	// Tabela verdade (saidas) de cada elemento
-	input wire [OUT-1:0][$clog2(ROW*COL)-1:0] out_chrom; 		// Seletor do mux de saida
-	input wire [IN-1:0] inp; 				// Entradas do circuito
-	output wire [OUT-1:0] out;				// Saidas do circuito
-	wire [ROW-1:0][COL-1:0]LE_out;				// Saida de cada elemento
+	input wire [3:0][3:0][15:0] saidas_LE; 	// Tabela verdade (saidas) de cada elemento
+	input wire [3:0] out_chrom; 		// Seletor do mux de saida
+	input wire [3:0] inp; 				// Entradas do circuito
+	output wire [0:0] out;				// Saidas do circuito
+	
+	wire [3:0][3:0]LE_out;				// Saida de cada elemento
 
 
-	`include "parameters.sv"
-	
-	
-	genvar i, j;
-	generate
-	for (i = 0; i < ROW; i++)
-	begin : lcellsi
-		for(j = 0 ; j< COL; j++)
-		begin: lcellsj
-			newlogic_e lcell( //NOVO LOGIC_E ???
-				.saidas(saidas_LE[i][j]),
-				.inp
-					({i==0?1'b0:LE_out[i-1][j]
-					, j==COL-1?1'b0:LE_out[i][j+1]
-					, i==ROW-1?1'b0:LE_out[i+1][j]
-					, j==0?1'b0:LE_out[i][j-1]
-					}),
-				.out(LE_out[i][j])
-			);
-		end
-	end
-	endgenerate
-			
-/*
+
 //--------------------------------------BORDA SUPERIOR-------------------------------------------------------	
 newlogic_e le00( //NOVO LOGIC_E ???
 	.saidas(saidas_LE[0][0]),
@@ -130,13 +108,7 @@ newlogic_e le33(				// ---------------------------CANTO DIREITO
 	.inp({LE_out[2][3], 1'b0, 1'b0, LE_out[3][2]}),
 	.out(LE_out[3][3])
 );
-*/
-genvar k;
-generate
-for (k= 0; k< OUT ; k++)
-begin : saida
-	assign out[k] = LE_out[out_chrom[k] / ROW][out_chrom[k] % ROW];
-end
-endgenerate
+
+assign out = LE_out[out_chrom / 4][out_chrom % 4];
 
 endmodule
