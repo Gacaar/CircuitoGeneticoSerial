@@ -10,22 +10,27 @@ module newGenetico(saidas_LE, out_chrom, inp, out);
 	`include "parameters.sv"
 	
 	
-	genvar i, j;
+	genvar i, j, s;
 	generate
-	for (i = 0; i < ROW; i++)
+
+	for (i = 0, s=0; i < ROW; i++)
 	begin : lcellsi
 		for(j = 0 ; j< COL; j++)
 		begin: lcellsj
 			newlogic_e lcell( //NOVO LOGIC_E ???
 				.saidas(saidas_LE[i][j]),
 				.inp
-					({i==0?1'b0:LE_out[i-1][j]
-					, j==COL-1?1'b0:LE_out[i][j+1]
-					, i==ROW-1?1'b0:LE_out[i+1][j]
-					, j==0?1'b0:LE_out[i][j-1]
+					({i==0?(s<IN?inp[s]:1'b0):LE_out[i-1][j]
+					, j==COL-1?((i==0? s+1:s)<IN?(i==0?(inp[s+1]:inp[s])):1'b0):LE_out[i][j+1]
+					, i==ROW-1?((j==COL-1?(i==0?s+2:s+1):s)<IN?(j==COL-1?(i==0?inp[s+2]:inp[s+1]):inp[s]):1'b0):LE_out[i+1][j]
+					, j==0?((j==ROW-1?(j==COL-1?(i==0?s+3:s+2):s+1):s)<IN?(j==ROW-1?(j==COL-1?(i==0?inp[s+3]:inp[s+2]):inp[s+1]):inp[s]):1'b0):LE_out[i][j-1]
 					}),
 				.out(LE_out[i][j])
 			);
+			i==0?s=s+1
+			j==0?s=s+1
+			i==ROW-1?s=s+1
+			j==COL-1?s=s+1
 		end
 	end
 	endgenerate
