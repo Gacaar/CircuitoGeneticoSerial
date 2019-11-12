@@ -10,6 +10,7 @@ module top(
 
 	`include "parameters.sv"
 
+	//tabela verdade de cada elemento
 	wire [ROW-1:0][COL-1:0][15:0]descricao;
 	
 	genvar i, j;
@@ -27,7 +28,7 @@ module top(
 
 newGenetico genetico(
 	.saidas_LE(descricao),
-	.out_chrom(cromossomo[ROW*COL*16+$clog2(ROW*COL)*OUT-1:ROW*COL*16-1]),
+	.out_chrom(cromossomo[ROW*COL*16+$clog2(ROW*COL)*OUT-1:ROW*COL*16]),
 	.inp(inp),
 	.out(out)
 );
