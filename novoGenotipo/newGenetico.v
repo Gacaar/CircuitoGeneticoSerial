@@ -67,8 +67,8 @@ module newGenetico(saidas_LE, out_chrom, inp, out);
 				.inp
 					({i==0?(s<IN?inp[s]:1'b0):LE_out[i-1][j]
 					, j==COL-1?((i==0? s+1:s)<IN?(i==0?inp[s+1]:inp[s]):1'b0):LE_out[i][j+1]
-					, i==ROW-1?((j==COL-1?(i==0?s+2:s+1):s)<IN?(j==COL-1?(i==0?inp[s+2]:inp[s+1]):inp[s]):1'b0):LE_out[i+1][j]
-					, j==0?((j==ROW-1?(j==COL-1?(i==0?s+3:s+2):s+1):s)<IN?(j==ROW-1?(j==COL-1?(i==0?inp[s+3]:inp[s+2]):inp[s+1]):inp[s]):1'b0):LE_out[i][j-1]
+					, i==ROW-1?(((j==COL-1 && i==0)?s+2:(j==COL-1 || i==0)?s+1:s)<IN?((j==COL-1 && i==0)?inp[s+2]:(j==COL-1 || i==0)?inp[s+1]:inp[s]):1'b0):LE_out[i+1][j]
+					, j==0?(((j==COL-1 && i==0 && i==ROW-1)?s+3:((j==COL-1 && i==0)||(i==0 && i==ROW-1)||(j==COL-1 && i==ROW-1))?s+2:(j==COL-1 || i==0 || i==ROW-1)?s+1:s)<IN?((j==COL-1 && i==0 && i==ROW-1)?inp[s+3]:((j==COL-1 && i==0)||(i==0 && i==ROW-1)||(j==COL-1 && i==ROW-1))?inp[s+2]:(j==COL-1 || i==0 || i==ROW-1)?inp[s+1]:inp[s]):1'b0):LE_out[i][j-1]
 					}),
 				.out(LE_out[i][j])
 			);

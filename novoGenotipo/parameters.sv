@@ -1,8 +1,8 @@
 parameter 
 			 IN		  = 4,
 			 OUT	 	  = 1,
-			 ROW		  = 4,
-			 COL 	  	  = 4;
+			 ROW		  = 1,
+			 COL 	  	  = 1;
 			 
 function integer clog2;
 input integer value;
