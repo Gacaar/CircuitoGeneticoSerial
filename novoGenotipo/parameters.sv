@@ -1,8 +1,11 @@
 parameter 
-			 IN		  = 4,
+			 IN		  = 1,
 			 OUT	 	  = 1,
 			 ROW		  = 1,
-			 COL 	  	  = 1;
+			 COL 	  	  = 2,
+			 TOTAL     = ROW*COL,
+			 BITS_ELEM = $clog2(TOTAL),
+			 BITS_MAT  = TOTAL*16;
 			 
 function integer clog2;
 input integer value;
