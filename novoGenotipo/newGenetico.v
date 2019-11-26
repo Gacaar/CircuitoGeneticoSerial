@@ -65,10 +65,10 @@ module newGenetico(saidas_LE, out_chrom, inp, out);
 			newlogic_e lcell( //NOVO LOGIC_E ???
 				.saidas(saidas_LE[i][j]),
 				.inp
-					({i==0?(s<IN?inp[s]:1'b0):LE_out[i-1][j]
-					, j==COL-1?((i==0? s+1:s)<IN?(i==0?inp[s+1]:inp[s]):1'b0):LE_out[i][j+1]
-					, i==ROW-1?(((j==COL-1 && i==0)?s+2:(j==COL-1 || i==0)?s+1:s)<IN?((j==COL-1 && i==0)?inp[s+2]:(j==COL-1 || i==0)?inp[s+1]:inp[s]):1'b0):LE_out[i+1][j]
-					, j==0?(((j==COL-1 && i==0 && i==ROW-1)?s+3:((j==COL-1 && i==0)||(i==0 && i==ROW-1)||(j==COL-1 && i==ROW-1))?s+2:(j==COL-1 || i==0 || i==ROW-1)?s+1:s)<IN?((j==COL-1 && i==0 && i==ROW-1)?inp[s+3]:((j==COL-1 && i==0)||(i==0 && i==ROW-1)||(j==COL-1 && i==ROW-1))?inp[s+2]:(j==COL-1 || i==0 || i==ROW-1)?inp[s+1]:inp[s]):1'b0):LE_out[i][j-1]
+					({j==0?(s<IN?inp[s]:1'b0):LE_out[i][j-1]
+					, i==0?((j==0? s+1:s)<IN?(j==0?inp[s+1]:inp[s]):1'b0):LE_out[i-1][j]
+					, j==COL-1?(((i==0 && j==0)?s+2:(i==0 || j==0)?s+1:s)<IN?((i==0 && j==0)?inp[s+2]:(i==0 || j==0)?inp[s+1]:inp[s]):1'b0):LE_out[i][j+1]
+					, i==ROW-1?(((i==0 && j==0 && j==COL-1)?s+3:((i==0 && j==0)||(i==0 && j==COL-1)||(i==0 && j==COL-1))?s+2:(i==0 || j==0 || j==COL-1)?s+1:s)<IN?((i==0 && j==0 && j==COL-1)?inp[s+3]:((i==0 && i==0)||(j==0 && j==COL-1)||(i==0 && j==COL-1))?inp[s+2]:(i==0 || j==0 || j==COL-1)?inp[s+1]:inp[s]):1'b0):LE_out[i+1][j]
 					}),
 				.out(LE_out[i][j])
 			);
