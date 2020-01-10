@@ -1,6 +1,6 @@
 parameter 
-			 IN		  = 1,
-			 OUT	 	  = 1,
+			 IN		  = 2,
+			 OUT	 	  = 2,
 			 ROW		  = 1,
 			 COL 	  	  = 2,
 			 TOTAL     = ROW*COL,

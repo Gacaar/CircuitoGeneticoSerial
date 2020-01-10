@@ -2,7 +2,7 @@
 
 module top(
 	
-	input [9:0]SW, 
+	input [9:0]SW,
 	output [9:0]LEDR
 
 );
@@ -11,10 +11,10 @@ module top(
 	wire [BITS_MAT+BITS_ELEM*OUT-1:0] cromossomo;
 	wire [IN-1:0] inp;
 
-	assign cromossomo[15:0] = 16'b0000000011111111;//menos significativo direita- not implementada
-	assign cromossomo[31:16] = 16'b0000000000000000;
-	assign cromossomo[32:32] = 1'b0;
-	assign inp = SW;
+	assign cromossomo[15:0] =  16'b0001_0000_0000_0000;//menos significativo direita
+	assign cromossomo[31:16] = 16'b0000_0001_0000_0000;
+	assign cromossomo[33:32] = 2'b10;
+	assign inp = SW[IN-1:0];
 	assign LEDR = out;
 
 	`include "parameters.sv"
@@ -29,7 +29,7 @@ module top(
 	begin : teste
 		for(j = 0; j < COL; j++)
 		begin : teste2
-			assign descricao[i][j] = cromossomo[15+COL*16*i+16*j -: 15];
+			assign descricao[i][j] = cromossomo[15+COL*16*i+16*j -: 16];
 		end
 	end
 	endgenerate
