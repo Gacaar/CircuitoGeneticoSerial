@@ -1,7 +1,7 @@
 parameter 
 			 IN		  = 2,
-			 OUT	 	  = 2,
-			 ROW		  = 1,
+			 OUT	 	  = 1,
+			 ROW		  = 2,
 			 COL 	  	  = 2,
 			 TOTAL     = ROW*COL,
 			 BITS_ELEM = $clog2(TOTAL),

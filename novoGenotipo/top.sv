@@ -8,10 +8,11 @@ module top(
 	wire [OUT-1:0] out;
 	wire [BITS_MAT+BITS_ELEM*OUT-1:0] cromossomo;
 	wire [IN-1:0] inp;
-
-	assign cromossomo[15:0] =  16'b0001_0000_0000_0000;//menos significativo direita
-	assign cromossomo[31:16] = 16'b0000_0001_0000_0000;
-	assign cromossomo[33:32] = 2'b10;
+	
+//	assign cromossomo[15:0] =  16'b0001_0000_0000_0000;//menos significativo direita
+//	assign cromossomo[31:16] = 16'b0000_0001_0000_0000;
+//	assign cromossomo[33:32] = 2'b10;
+	assign cromossomo = 010110010011010001000110101101011000111100101101110001101001110001;
 	assign inp = SW[IN-1:0];
 	assign LEDR = out;
 

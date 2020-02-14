@@ -22,8 +22,8 @@ parameter NUM_SAMPLES = 1023,
 parameter 
 			 IN		  = 2,
 			 OUT	 	  = 1,
-			 ROW		  = 10,
-			 COL 	  	  = 6,
+			 ROW		  = 4,
+			 COL 	  	  = 4,
 			 TOTAL     = ROW*COL,
 			 BITS_ELEM = $clog2(TOTAL),
 			 BITS_MAT  = TOTAL*16;

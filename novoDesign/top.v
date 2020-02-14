@@ -86,11 +86,10 @@ wire doneProcessingChrom;
 wire doneFilling;
 
 assign LEDR[6:0] = chromOutput[6:0];
-assign LEDR[9:8] = state;
+assign LEDR[9:7] = state;
 //assign LEDR[9] = nextSample;//state;
 //assign LEDR[8] = preparingNextSample;
 //TESTE DE SINAL DO PROCESSAMENTOSERIAL
-wire [23:0]teste;
 
 assign concatedChromInput = {
 	rawChromInput[30],
