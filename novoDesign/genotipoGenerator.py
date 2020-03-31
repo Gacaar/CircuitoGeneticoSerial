@@ -7,26 +7,17 @@ import sys
 if(len(sys.argv) == 5):
     num_rows = int(sys.argv[1])
     num_cols = int(sys.argv[2])
-    num_inp = int(sys.argv[3])
+    num_inputs = int(sys.argv[3])
     num_out = int(sys.argv[4])
 else:
     print("Insira 4 inteiros nessa ordem: num_row, num_col, num_in e num_out")
     sys.exit(2)
 
 num_cells = num_rows*num_cols
-max_inp = 2*num_cols+2*num_rows
 
-if(num_inp > max_inp):
-    print("Numero de entradas é maior que o possível")
-    sys.exit(2)
+text = ""
 
-# array que define quais possiveis entradas vao receber entradas externas
-have_inp = np.zeros(max_inp)
-have_inp[0:num_inp] = 1 # as entrdas estarao nas primeiras possiveis
-
-file = open("newGenetico.v", "w+")
-
-file.write("\
+text += "\
 module newGenetico(saidas_LE, out_chrom, inp, out);\n\
 \n\
     input wire [ROW-1:0][COL-1:0][15:0] saidas_LE; 	// Tabela verdade (saidas) de cada elemento\n\
@@ -37,15 +28,17 @@ module newGenetico(saidas_LE, out_chrom, inp, out);\n\
 \n\
 \n\
     `include \"parameters.sv\"\n\
-    ")
+    "
 
-text = ""
+# numero de inputs colocados E indice do proximo input a ser ligado
+inputs_placed = 0
 
+# Para cada cell...
 for cell in range(0,num_cells):
     row = math.floor(cell/num_cols)
     col = cell%num_cols
 
-    #faz as 4 ligacoes, comecando pela superior
+    # Verifica quais ligacoes da cell devem ser ligadas com outras cells 
     num_lig = [col, col+row+1, num_rows+2*num_cols-1-col, 2*num_rows+2*num_cols-1-row]
     if(row-1 >= 0):
         num_lig[0] = -1
@@ -63,45 +56,31 @@ for cell in range(0,num_cells):
         .saidas(saidas_LE[" + str(row) + "][" + str(col) + "]),\n\
         .inpu({"
 
-    if(num_lig[0] == -1):
-        text += "LE_out["+str(row-1)+"]["+str(col)+"],"
-    else:
-        if(have_inp[num_lig[0]] == 1):
-            text += "inp["+str(num_lig[0])+"],"
-        else:
-            text += "1'b0,"
-    
-    if(num_lig[1] == -1):
-        text += "LE_out["+str(row)+"]["+str(col+1)+"],"
-    else:
-        if(have_inp[num_lig[1]] == 1):
-            text += "inp["+str(num_lig[1])+"],"
-        else:
-            text += "1'b0,"
+    # flag que informa se cell ja recebeu algum input (cada cell deve receber somente um input)
+    input_in_cell = False
 
-    if(num_lig[2] == -1):
-        text += "LE_out["+str(row+1)+"]["+str(col)+"],"
-    else:
-        if(have_inp[num_lig[2]] == 1):
-            text += "inp["+str(num_lig[2])+"],"
+    # Para cada entrada da cell: liga outra cell, input ou 0
+    # Se a cell for receber um input, vai ser no primeiro lugar possivel. A verificacao comeca em cima e vai no sentido horario
+    for cell_input in range(0,4):
+        if(num_lig[cell_input] == -1):
+            text += "LE_out["+str(row-1)+"]["+str(col)+"],"
         else:
-            text += "1'b0,"
-
-    if(num_lig[3] == -1):
-        text += "LE_out["+str(row)+"]["+str(col-1)+"]"
-    else:
-        if(have_inp[num_lig[3]] == 1):
-            text += "inp["+str(num_lig[3])+"]"
-        else:
-            text += "1'b0"
+            if inputs_placed < num_inputs and not input_in_cell:
+                text += "inp["+str(inputs_placed)+"],"
+                inputs_placed += 1
+                input_in_cell = True
+            else:
+                text += "1'b0,"
 
     text += "}),\n\
 		.out(LE_out["+str(row)+"]["+str(col)+"])\n\
 	);"
 
-file.write(text)
+if(num_inputs > inputs_placed):
+    print("Numero de entradas é maior que o possível")
+    sys.exit(2)
 
-file.write("\n\n\
+text += "\n\n\
     genvar k;\n\
 	generate\n\
 	for (k= 0; k< OUT ; k++)\n\
@@ -111,15 +90,18 @@ file.write("\n\n\
 	endgenerate\n\
 \n\
 endmodule\n\
-    ")
+    "
 
+
+file = open("newGenetico.v", "w+")
+file.write(text)
 file.close()
 
 file = open("parameters.sv", "w+")
 
 file.write("\
 parameter \n\
-			 IN		   = "+str(num_inp)+",\n\
+			 IN		   = "+str(num_inputs)+",\n\
 			 OUT	   = "+str(num_out)+",\n\
 			 ROW	   = "+str(num_rows)+",\n\
 			 COL 	   = "+str(num_cols)+",\n\
