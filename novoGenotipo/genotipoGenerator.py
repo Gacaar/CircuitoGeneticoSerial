@@ -39,16 +39,15 @@ for cell in range(0,num_cells):
     col = cell%num_cols
 
     # Verifica quais ligacoes da cell devem ser ligadas com outras cells 
-    num_lig = [col, col+row+1, num_rows+2*num_cols-1-col, 2*num_rows+2*num_cols-1-row]
+    num_lig = [0,0,0,0]
     if(row-1 >= 0):
-        num_lig[0] = -1
+        num_lig[0] = 1
     if(col+1 < num_cols):
-        num_lig[1] = -1
+        num_lig[1] = 2
     if(row+1 < num_rows):
-        num_lig[2] = -1
+        num_lig[2] = 3
     if(col-1 >= 0):
-        num_lig[3] = -1
-
+        num_lig[3] = 4
 
     text += "\n\
     //CELL " + str(cell) + "\n\
@@ -59,11 +58,18 @@ for cell in range(0,num_cells):
     # flag que informa se cell ja recebeu algum input (cada cell deve receber somente um input)
     input_in_cell = False
 
-    # Para cada entrada da cell: liga outra cell, input ou 0
-    # Se a cell for receber um input, vai ser no primeiro lugar possivel. A verificacao comeca em cima e vai no sentido horario
+    # Para cada entrada da cell: liga outra cell, input ou 0. A verificacao eh feita em cada linha, de cima para baixo, em cada coluna, da esquerda para a direita
+    # Se a cell for receber um input, vai ser no primeiro lugar possivel. A verificacao na cell comeca em cima e vai no sentido horario
     for cell_input in range(0,4):
-        if(num_lig[cell_input] == -1):
-            text += "LE_out["+str(row-1)+"]["+str(col)+"],"
+        if num_lig[cell_input] != 0:
+            if num_lig[cell_input] == 1:
+                text += "LE_out["+str(row-1)+"]["+str(col)+"],"
+            elif num_lig[cell_input] == 2:
+                text += "LE_out["+str(row)+"]["+str(col+1)+"],"
+            elif num_lig[cell_input] == 3:
+                text += "LE_out["+str(row+1)+"]["+str(col)+"],"
+            elif num_lig[cell_input] == 4:
+                text += "LE_out["+str(row)+"]["+str(col-1)+"],"    
         else:
             if inputs_placed < num_inputs and not input_in_cell:
                 text += "inp["+str(inputs_placed)+"],"
