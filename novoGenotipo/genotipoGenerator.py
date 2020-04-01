@@ -53,7 +53,7 @@ for cell in range(0,num_cells):
     //CELL " + str(cell) + "\n\
     newlogic_e lcell" + str(cell) + "( \n\
         .saidas(saidas_LE[" + str(row) + "][" + str(col) + "]),\n\
-        .inpu({"
+        .inp({"
 
     # flag que informa se cell ja recebeu algum input (cada cell deve receber somente um input)
     input_in_cell = False
