@@ -52,7 +52,7 @@ for cell in range(0,num_cells):
     text += "\n\
     //CELL " + str(cell) + "\n\
     newlogic_e lcell" + str(cell) + "( \n\
-        .saidas(saidas_LE[" + str(row) + "][" + str(col) + "]),\n\
+        .saidas(saidas_LE[" + str(row) + "][" + str(col) + "])\n\
         .inp({"
 
     # flag que informa se cell ja recebeu algum input (cada cell deve receber somente um input)
@@ -69,14 +69,14 @@ for cell in range(0,num_cells):
             elif num_lig[cell_input] == 3:
                 text += "LE_out["+str(row+1)+"]["+str(col)+"],"
             elif num_lig[cell_input] == 4:
-                text += "LE_out["+str(row)+"]["+str(col-1)+"],"    
+                text += "LE_out["+str(row)+"]["+str(col-1)+"]"    
         else:
             if inputs_placed < num_inputs and not input_in_cell:
-                text += "inp["+str(inputs_placed)+"],"
+                text += "inp["+str(inputs_placed)+"]"+ ("," if cell_input != 3 else "")
                 inputs_placed += 1
                 input_in_cell = True
             else:
-                text += "1'b0,"
+                text += "1'b0"+("," if cell_input != 3 else "")
 
     text += "}),\n\
 		.out(LE_out["+str(row)+"]["+str(col)+"])\n\
