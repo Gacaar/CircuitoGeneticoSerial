@@ -12,7 +12,7 @@ module top(
 //	assign cromossomo[15:0] =  16'b0001_0000_0000_0000;//menos significativo direita
 //	assign cromossomo[31:16] = 16'b0000_0001_0000_0000;
 //	assign cromossomo[33:32] = 2'b10;
-	assign cromossomo = 010110010011010001000110101101011000111100101101110001101001110001;
+	assign cromossomo = 01111101100011000001011110010000101000111101011010;
 	assign inp = SW[IN-1:0];
 	assign LEDR = out;
 

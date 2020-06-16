@@ -1,8 +1,8 @@
 parameter 
-			 IN		  = 2,
-			 OUT	 	  = 1,
-			 ROW		  = 2,
-			 COL 	  	  = 2,
+			 IN		= 3,
+			 OUT	   = 1,
+			 ROW	   = 3,
+			 COL 	   = 1,
 			 TOTAL     = ROW*COL,
 			 BITS_ELEM = $clog2(TOTAL),
 			 BITS_MAT  = TOTAL*16;
@@ -28,9 +28,9 @@ parameter NUM_SAMPLES = 1023,
 			 WAITING_SAMPLE = 1'b1,
 			 SEQ_IDLE = 1'b0;
 
-			 
-			 
-			 
+
+
+
 function integer clog2;
 input integer value;
 begin
@@ -39,5 +39,3 @@ for (clog2=0; value>0; clog2=clog2+1)
 value = value>>1;
 end
 endfunction
-
-			 
