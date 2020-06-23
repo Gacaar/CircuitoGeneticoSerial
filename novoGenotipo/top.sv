@@ -9,10 +9,10 @@ module top(
 	wire [BITS_MAT+BITS_ELEM*OUT-1:0] cromossomo;
 	wire [IN-1:0] inp;
 	
-//	assign cromossomo[15:0] =  16'b0001_0000_0000_0000;//menos significativo direita
-//	assign cromossomo[31:16] = 16'b0000_0001_0000_0000;
-//	assign cromossomo[33:32] = 2'b10;
-	assign cromossomo = 01111101100011000001011110010000101000111101011010;
+//	assign cromossomo[15:0] =  16'b1111_1111_0000_0000;//menos significativo direita
+//	assign cromossomo[31:16] = 16'b1111_0000_0000_0000;
+//	assign cromossomo[32:32] = 1'b1;
+	assign cromossomo = 1024'b01111101100011000001011110010000101000111101011010;
 	assign inp = SW[IN-1:0];
 	assign LEDR = out;
 
@@ -39,7 +39,7 @@ module top(
 	for(k=0;k<OUT;k++)
 	begin: outi
 		assign out_chrom[k] = cromossomo[((BITS_MAT + (BITS_ELEM * (k + 1))) - 1) -: BITS_ELEM];
-		//assign out_chrom[k] = cromossomo[32 : 32];
+//		assign out_chrom[k] = cromossomo[32 : 32];
 	end
 	endgenerate
 	
