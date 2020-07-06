@@ -1,11 +1,16 @@
 parameter 
-			 IN		= 3,
+			 IN		= 1,
 			 OUT	   = 1,
-			 ROW	   = 3,
+			 ROW	   = 1,
 			 COL 	   = 1,
 			 TOTAL     = ROW*COL,
-			 BITS_ELEM = $clog2(TOTAL),
-			 BITS_MAT  = TOTAL*16;
+//			 BITS_ELEM = $clog2(TOTAL),
+			 BITS_ELEM = 1,
+			 BITS_MAT  = TOTAL*16,
+			 
+			 NUM_MUX = 4 * TOTAL,				// Numero de multiplexadores das entradas
+			 BITS_SEL = $clog2(IN + 2),		// Numero de bits seletores para cada mux
+			 BITS_MUX = NUM_MUX * BITS_SEL;  // Total de bits seletores
 
 parameter IDLE = 3'b000,
 			 PROCESSING = 3'b001, 
