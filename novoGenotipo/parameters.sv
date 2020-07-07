@@ -1,11 +1,11 @@
 parameter 
-			 IN		= 1,
+			 IN		= 2,
 			 OUT	   = 1,
-			 ROW	   = 1,
+			 ROW	   = 2,
 			 COL 	   = 1,
 			 TOTAL     = ROW*COL,
-//			 BITS_ELEM = $clog2(TOTAL),
-			 BITS_ELEM = 1,
+			 BITS_ELEM = $clog2(TOTAL),
+//			 BITS_ELEM = 1,						// Usar no caso 1x1
 			 BITS_MAT  = TOTAL*16,
 			 
 			 NUM_MUX = 4 * TOTAL,				// Numero de multiplexadores das entradas
