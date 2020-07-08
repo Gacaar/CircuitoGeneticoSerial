@@ -1,8 +1,8 @@
 parameter 
-			 IN		= 2,
+			 IN		= 3,
 			 OUT	   = 1,
-			 ROW	   = 2,
-			 COL 	   = 1,
+			 ROW	   = 3,
+          COL     = 1,
 			 TOTAL     = ROW*COL,
 			 BITS_ELEM = $clog2(TOTAL),
 //			 BITS_ELEM = 1,						// Usar no caso 1x1

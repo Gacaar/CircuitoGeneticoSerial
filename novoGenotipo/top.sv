@@ -13,7 +13,9 @@ module top(
 //	assign cromossomo[31:16] = 16'b1111_0000_0000_0000;
 //	assign cromossomo[32:32] = 1'b1;
 //3312_3230
-	assign cromossomo = 1024'b11110110_11101100_100110100001000100101111101000000;
+//	assign cromossomo = 1024'b11110110_11101100_100110100001000100101111101000000; //AND 2x1
+	//4423_4313_4340
+	assign cromossomo = 1024'b100_100_010_011__100_011_001_011__100_011_100_000__01111101100011000001011110010000101000111101011010; //Maioria3 3x1
 	assign inp = SW[IN-1:0];
 	assign LEDR = out;
 
@@ -52,7 +54,7 @@ module top(
 	begin : in1
 		for(b = 0; b < 4; b++)
 		begin : in2
-			assign in_chrom[a][b*2+:BITS_SEL] = cromossomo[BITS_MAT +
+			assign in_chrom[a][b*BITS_SEL+:BITS_SEL] = cromossomo[BITS_MAT +
 														 (OUT * BITS_ELEM) +
 														 (a*4*BITS_SEL) + (b*BITS_SEL)  +: BITS_SEL];
 		end
